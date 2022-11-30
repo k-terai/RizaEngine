@@ -11,9 +11,7 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)CoreSystem\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)CoreSystem\DelegateCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreSystem\EditorConsts.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreSystem\EditorCommon.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreSystem\NotifyPropertyChangedBase.cs" />
