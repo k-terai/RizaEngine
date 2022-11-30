@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizaSandbox", "RizaSandbox\RizaSandbox.csproj", "{780C30F7-8577-471E-BBD9-9CE7A48B259E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Editor", "Editor", "{C009257D-BF24-42E4-A16F-D543C26E06FD}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "RizaEdCore", "RizaEdCore\RizaEdCore.shproj", "{6B77DCA0-392F-472F-B58E-9949A31F2DAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizaConsole", "RizaConsole\RizaConsole.csproj", "{C26C9287-B9F0-4292-89C1-C7F0FCFFDBCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RizaConsole", "RizaConsole\RizaConsole.csproj", "{C26C9287-B9F0-4292-89C1-C7F0FCFFDBCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizaWpfEditor", "RizaWpfEditor\RizaWpfEditor.csproj", "{38D44B26-51F1-4023-ACD3-C67B8F4C3638}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,29 +17,29 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{780C30F7-8577-471E-BBD9-9CE7A48B259E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{780C30F7-8577-471E-BBD9-9CE7A48B259E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{780C30F7-8577-471E-BBD9-9CE7A48B259E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{780C30F7-8577-471E-BBD9-9CE7A48B259E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C26C9287-B9F0-4292-89C1-C7F0FCFFDBCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C26C9287-B9F0-4292-89C1-C7F0FCFFDBCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C26C9287-B9F0-4292-89C1-C7F0FCFFDBCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C26C9287-B9F0-4292-89C1-C7F0FCFFDBCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38D44B26-51F1-4023-ACD3-C67B8F4C3638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38D44B26-51F1-4023-ACD3-C67B8F4C3638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38D44B26-51F1-4023-ACD3-C67B8F4C3638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38D44B26-51F1-4023-ACD3-C67B8F4C3638}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{780C30F7-8577-471E-BBD9-9CE7A48B259E} = {C009257D-BF24-42E4-A16F-D543C26E06FD}
 		{6B77DCA0-392F-472F-B58E-9949A31F2DAD} = {C009257D-BF24-42E4-A16F-D543C26E06FD}
 		{C26C9287-B9F0-4292-89C1-C7F0FCFFDBCF} = {C009257D-BF24-42E4-A16F-D543C26E06FD}
+		{38D44B26-51F1-4023-ACD3-C67B8F4C3638} = {C009257D-BF24-42E4-A16F-D543C26E06FD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7D4BA923-D2FC-4947-AC3B-5B158E589285}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		RizaEdCore\RizaEdCore.projitems*{38d44b26-51f1-4023-acd3-c67b8f4c3638}*SharedItemsImports = 5
 		RizaEdCore\RizaEdCore.projitems*{6b77dca0-392f-472f-b58e-9949a31f2dad}*SharedItemsImports = 13
-		RizaEdCore\RizaEdCore.projitems*{780c30f7-8577-471e-bbd9-9ce7a48b259e}*SharedItemsImports = 5
 		RizaEdCore\RizaEdCore.projitems*{c26c9287-b9f0-4292-89c1-c7f0fcffdbcf}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
