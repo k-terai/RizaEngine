@@ -9,13 +9,17 @@
     <Import_RootNamespace>RizaEdCore</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ControlSystem\ControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ControlSystem\IControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreSystem\DelegateCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreSystem\EditorConsts.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreSystem\EditorCommon.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreSystem\NotifyPropertyChangedBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreSystem\SerializableBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreSystem\ViewModelBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WindowSystem\IWindow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WindowSystem\TabViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WindowSystem\WindowItems.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WindowSystem\WindowViewModel.cs" />
   </ItemGroup>
 </Project>
