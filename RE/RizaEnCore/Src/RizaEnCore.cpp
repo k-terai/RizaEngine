@@ -1,10 +1,10 @@
-﻿// RizaEnCore.cpp : スタティック ライブラリ用の関数を定義します。
-//
+﻿// Copyright (c) k-terai and Contributors
+// Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
 
 #include "pch.h"
 #include "framework.h"
 
-// TODO: これは、ライブラリ関数の例です
+
 void fnRizaEnCore()
 {
 }
