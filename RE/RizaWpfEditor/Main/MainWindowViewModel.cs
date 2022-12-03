@@ -37,17 +37,16 @@ namespace RizaWpfEditor.Main
         {
             EnableToolBar = true;
             //IconUri = new Uri(Resources.icon_app, UriKind.RelativeOrAbsolute);
-            //MinimizeImageUri = new Uri(Resources.icons8_subtract, UriKind.RelativeOrAbsolute);
-            //MaximizeImageUri = new Uri(Resources.icons8_maximize_window, UriKind.RelativeOrAbsolute);
-            //RestoreImageUri = new Uri(Resources.icons8_restore_down, UriKind.RelativeOrAbsolute);
-            //CloseImageUri = new Uri(Resources.icons8_close, UriKind.RelativeOrAbsolute);
+            MinimizeImageUri = new Uri(Resources.Icon_Arrow_Minimize_Vertical_Custom, UriKind.RelativeOrAbsolute);
+            MaximizeImageUri = new Uri(Resources.Icon_FullScreenMaximize, UriKind.RelativeOrAbsolute);
+            RestoreImageUri = new Uri(Resources.Icon_FullScreenMinimize, UriKind.RelativeOrAbsolute);
+            CloseImageUri = new Uri(Resources.Icon_Dismiss, UriKind.RelativeOrAbsolute);
             Title = "None";
             DockingWindows = new();
             Anchorables = new();
             Documents = new();
             InitCommands();
 
-            OpenAssetBrowserCommand.SafeExecute(null);
             ResourceService.Current.ChangeCulture("en-US");
         }
 

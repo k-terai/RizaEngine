@@ -8,6 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+#if WPF
+using System.Windows;
+#endif
+
 namespace RizaWpfEditor.Main
 {
     public interface IMainWindow : IWindow

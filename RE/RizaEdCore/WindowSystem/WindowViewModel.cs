@@ -6,6 +6,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+#if WPF
+using System.Windows;
+#endif
+
 namespace RizaEdCore.WindowSystem
 {
     public abstract class WindowViewModel : ViewModelBase
@@ -80,7 +84,7 @@ namespace RizaEdCore.WindowSystem
 
 
 #if WPF
-        public ResizeMode ResizeModeType { get => _resizeModeType; set { _resizeModeType = value; NotifyPropertyChanged(); } 
+        public ResizeMode ResizeModeType { get => _resizeModeType; set { _resizeModeType = value; NotifyPropertyChanged(); } }
 
         public WindowStyle Style { get => style; set { style = value; NotifyPropertyChanged(); } }
 

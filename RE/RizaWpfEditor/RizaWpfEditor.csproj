@@ -7,7 +7,43 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants)TRACE;WPF</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants)TRACE;WPF</DefineConstants>
+  </PropertyGroup>
+
   <Import Project="..\RizaEdCore\RizaEdCore.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <None Remove="Icons\ic_fluent_arrow_minimize_24_regular.png" />
+    <None Remove="Icons\ic_fluent_arrow_minimize_vertical_24_regular-custom.png" />
+    <None Remove="Icons\ic_fluent_arrow_minimize_vertical_24_regular.png" />
+    <None Remove="Icons\ic_fluent_dismiss_24_filled.png" />
+    <None Remove="Icons\ic_fluent_dismiss_24_regular.png" />
+    <None Remove="Icons\ic_fluent_full_screen_maximize_24_regular.png" />
+    <None Remove="Icons\ic_fluent_full_screen_minimize_24_regular.png" />
+    <None Remove="Icons\ic_fluent_maximize_24_filled.png" />
+    <None Remove="Icons\ic_fluent_maximize_24_regular.png" />
+    <None Remove="Icons\ic_fluent_resize_large_24_regular.png" />
+    <None Remove="Icons\ic_fluent_resize_small_24_regular.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\ic_fluent_arrow_minimize_24_regular.png" />
+    <Resource Include="Icons\ic_fluent_arrow_minimize_vertical_24_regular-custom.png" />
+    <Resource Include="Icons\ic_fluent_arrow_minimize_vertical_24_regular.png" />
+    <Resource Include="Icons\ic_fluent_dismiss_24_filled.png" />
+    <Resource Include="Icons\ic_fluent_dismiss_24_regular.png" />
+    <Resource Include="Icons\ic_fluent_full_screen_maximize_24_regular.png" />
+    <Resource Include="Icons\ic_fluent_full_screen_minimize_24_regular.png" />
+    <Resource Include="Icons\ic_fluent_maximize_24_filled.png" />
+    <Resource Include="Icons\ic_fluent_maximize_24_regular.png" />
+    <Resource Include="Icons\ic_fluent_resize_large_24_regular.png" />
+    <Resource Include="Icons\ic_fluent_resize_small_24_regular.png" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Resources.Designer.cs">
