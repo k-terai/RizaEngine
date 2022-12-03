@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Copyright (c) k-terai and Contributors
+// Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
+
+using RizaWpfEditor.Main;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +22,16 @@ namespace RizaWpfEditor
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window,IMainWindow
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        public void ShowWindow()
+        {
+            Show();
         }
     }
 }

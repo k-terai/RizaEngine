@@ -33,6 +33,10 @@ namespace RizaEdCore.CoreSystem
         public const int MEDIUM_THUMBNAIL_SIZE = 150;
         public const int LARGE_THUMBNAIL_SIZE = 200;
         public const int HUGE_THUMBNAIL_SIZE = 300;
+
+        // Language code
+        public const string JAPANACECODE = "ja-jp";
+        public const string ENGLISHCODE = "en-us";
     }
 }
 
