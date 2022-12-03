@@ -17,6 +17,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)CoreSystem\NotifyPropertyChangedBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreSystem\SerializableBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreSystem\ViewModelBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WindowSystem\DockingWindowViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WindowSystem\IWindow.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WindowSystem\TabViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WindowSystem\WindowItems.cs" />
