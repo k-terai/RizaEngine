@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Platforms>AnyCPU;x64</Platforms>
+    <BaseOutputPath>$(SolutionDir)Builds\</BaseOutputPath>
   </PropertyGroup>
 
   <Import Project="..\RizaEdCore\RizaEdCore.projitems" Label="Shared" />
