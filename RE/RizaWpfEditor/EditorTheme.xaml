@@ -26,7 +26,7 @@
     <SolidColorBrush x:Key="DarkDisabledEmphasisTextColorBrush" Color="#60FFFFFF"/>
 
     <!--Image Opacity-->
-    <system:Double x:Key="DarkImageOpacity">0.88</system:Double>
+    <system:Double x:Key="DarkImageOpacity">1</system:Double>
     <system:Double x:Key="DarkImageDisableOpacity">0.38</system:Double>
     <!--contentPresenter's Opacity will be applied to everything, so set it individually-->
     <system:Double x:Key="CustomButtonWithImageEnableImageOpacity">1</system:Double>

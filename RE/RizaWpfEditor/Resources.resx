@@ -138,26 +138,38 @@
   <data name="Icon-Arrow-Minimize-Vertical-Custom" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_arrow_minimize_vertical_24_regular-custom.png</value>
   </data>
-  <data name="Icon-ArrowMinimize" xml:space="preserve">
-    <value>/RizaWpfEditor;component/Icons/ic_fluent_arrow_minimize_24_regular.png</value>
-  </data>
   <data name="Icon-Dismiss" xml:space="preserve">
-    <value>/RizaWpfEditor;component/Icons/ic_fluent_dismiss_24_regular.png</value>
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_dismiss_24_filled.png</value>
   </data>
-  <data name="Icon-FullScreenMaximize" xml:space="preserve">
+  <data name="Icon-FullScreen-Maximize" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_full_screen_maximize_24_regular.png</value>
   </data>
-  <data name="Icon-FullScreenMinimize" xml:space="preserve">
+  <data name="Icon-FullScreen-Minimize" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_full_screen_minimize_24_regular.png</value>
   </data>
-  <data name="Icon-Maximize" xml:space="preserve">
-    <value>/RizaWpfEditor;component/Icons/ic_fluent_maximize_24_regular.png</value>
+  <data name="Icon-Library" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_library_128_filled.png</value>
   </data>
-  <data name="Icon-ResizeLarge" xml:space="preserve">
-    <value>/RizaWpfEditor;component/Icons/ic_fluent_resize_large_24_regular.png</value>
+  <data name="Icon-Open" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_folder_open_128_filled.png</value>
   </data>
-  <data name="Icon-ResizeSmall" xml:space="preserve">
-    <value>/RizaWpfEditor;component/Icons/ic_fluent_resize_small_24_regular.png</value>
+  <data name="Icon-Pause" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_pause_128_filled.png</value>
+  </data>
+  <data name="Icon-Play" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_play_128_filled.png</value>
+  </data>
+  <data name="Icon-Redo" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_arrow_redo_128_filled.png</value>
+  </data>
+  <data name="Icon-Save" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_save_128_filled.png</value>
+  </data>
+  <data name="Icon-Stop" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_stop_128_filled.png</value>
+  </data>
+  <data name="Icon-Undo" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_arrow_undo_128_filled.png</value>
   </data>
   <data name="Tools" xml:space="preserve">
     <value>Tools(_T)</value>

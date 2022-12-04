@@ -124,16 +124,7 @@ namespace RizaWpfEditor {
         }
         
         /// <summary>
-        ///   /RizaWpfEditor;component/Icons/ic_fluent_arrow_minimize_24_regular.png に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        public static string Icon_ArrowMinimize {
-            get {
-                return ResourceManager.GetString("Icon-ArrowMinimize", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   /RizaWpfEditor;component/Icons/ic_fluent_dismiss_24_regular.png に類似しているローカライズされた文字列を検索します。
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_dismiss_24_filled.png に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Icon_Dismiss {
             get {
@@ -144,45 +135,90 @@ namespace RizaWpfEditor {
         /// <summary>
         ///   /RizaWpfEditor;component/Icons/ic_fluent_full_screen_maximize_24_regular.png に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string Icon_FullScreenMaximize {
+        public static string Icon_FullScreen_Maximize {
             get {
-                return ResourceManager.GetString("Icon-FullScreenMaximize", resourceCulture);
+                return ResourceManager.GetString("Icon-FullScreen-Maximize", resourceCulture);
             }
         }
         
         /// <summary>
         ///   /RizaWpfEditor;component/Icons/ic_fluent_full_screen_minimize_24_regular.png に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string Icon_FullScreenMinimize {
+        public static string Icon_FullScreen_Minimize {
             get {
-                return ResourceManager.GetString("Icon-FullScreenMinimize", resourceCulture);
+                return ResourceManager.GetString("Icon-FullScreen-Minimize", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   /RizaWpfEditor;component/Icons/ic_fluent_maximize_24_regular.png に類似しているローカライズされた文字列を検索します。
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_library_128_filled.png に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string Icon_Maximize {
+        public static string Icon_Library {
             get {
-                return ResourceManager.GetString("Icon-Maximize", resourceCulture);
+                return ResourceManager.GetString("Icon-Library", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   /RizaWpfEditor;component/Icons/ic_fluent_resize_large_24_regular.png に類似しているローカライズされた文字列を検索します。
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_folder_open_128_filled.png に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string Icon_ResizeLarge {
+        public static string Icon_Open {
             get {
-                return ResourceManager.GetString("Icon-ResizeLarge", resourceCulture);
+                return ResourceManager.GetString("Icon-Open", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   /RizaWpfEditor;component/Icons/ic_fluent_resize_small_24_regular.png に類似しているローカライズされた文字列を検索します。
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_pause_128_filled.png に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string Icon_ResizeSmall {
+        public static string Icon_Pause {
             get {
-                return ResourceManager.GetString("Icon-ResizeSmall", resourceCulture);
+                return ResourceManager.GetString("Icon-Pause", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_play_128_filled.png に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Icon_Play {
+            get {
+                return ResourceManager.GetString("Icon-Play", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_arrow_redo_128_filled.png に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Icon_Redo {
+            get {
+                return ResourceManager.GetString("Icon-Redo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_save_128_filled.png に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Icon_Save {
+            get {
+                return ResourceManager.GetString("Icon-Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_stop_128_filled.png に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Icon_Stop {
+            get {
+                return ResourceManager.GetString("Icon-Stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_arrow_undo_128_filled.png に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Icon_Undo {
+            get {
+                return ResourceManager.GetString("Icon-Undo", resourceCulture);
             }
         }
         

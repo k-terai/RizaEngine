@@ -28,31 +28,35 @@
   <Import Project="..\RizaEdCore\RizaEdCore.projitems" Label="Shared" />
 
   <ItemGroup>
-    <None Remove="Icons\ic_fluent_arrow_minimize_24_regular.png" />
     <None Remove="Icons\ic_fluent_arrow_minimize_vertical_24_regular-custom.png" />
     <None Remove="Icons\ic_fluent_arrow_minimize_vertical_24_regular.png" />
+    <None Remove="Icons\ic_fluent_arrow_redo_128_filled.png" />
+    <None Remove="Icons\ic_fluent_arrow_undo_128_filled.png" />
     <None Remove="Icons\ic_fluent_dismiss_24_filled.png" />
-    <None Remove="Icons\ic_fluent_dismiss_24_regular.png" />
+    <None Remove="Icons\ic_fluent_folder_open_128_filled.png" />
     <None Remove="Icons\ic_fluent_full_screen_maximize_24_regular.png" />
     <None Remove="Icons\ic_fluent_full_screen_minimize_24_regular.png" />
-    <None Remove="Icons\ic_fluent_maximize_24_filled.png" />
-    <None Remove="Icons\ic_fluent_maximize_24_regular.png" />
-    <None Remove="Icons\ic_fluent_resize_large_24_regular.png" />
-    <None Remove="Icons\ic_fluent_resize_small_24_regular.png" />
+    <None Remove="Icons\ic_fluent_library_128_filled.png" />
+    <None Remove="Icons\ic_fluent_pause_128_filled.png" />
+    <None Remove="Icons\ic_fluent_play_128_filled.png" />
+    <None Remove="Icons\ic_fluent_save_128_filled.png" />
+    <None Remove="Icons\ic_fluent_stop_128_filled.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Icons\ic_fluent_arrow_minimize_24_regular.png" />
     <Resource Include="Icons\ic_fluent_arrow_minimize_vertical_24_regular-custom.png" />
     <Resource Include="Icons\ic_fluent_arrow_minimize_vertical_24_regular.png" />
+    <Resource Include="Icons\ic_fluent_arrow_redo_128_filled.png" />
+    <Resource Include="Icons\ic_fluent_arrow_undo_128_filled.png" />
     <Resource Include="Icons\ic_fluent_dismiss_24_filled.png" />
-    <Resource Include="Icons\ic_fluent_dismiss_24_regular.png" />
+    <Resource Include="Icons\ic_fluent_folder_open_128_filled.png" />
     <Resource Include="Icons\ic_fluent_full_screen_maximize_24_regular.png" />
     <Resource Include="Icons\ic_fluent_full_screen_minimize_24_regular.png" />
-    <Resource Include="Icons\ic_fluent_maximize_24_filled.png" />
-    <Resource Include="Icons\ic_fluent_maximize_24_regular.png" />
-    <Resource Include="Icons\ic_fluent_resize_large_24_regular.png" />
-    <Resource Include="Icons\ic_fluent_resize_small_24_regular.png" />
+    <Resource Include="Icons\ic_fluent_library_128_filled.png" />
+    <Resource Include="Icons\ic_fluent_pause_128_filled.png" />
+    <Resource Include="Icons\ic_fluent_play_128_filled.png" />
+    <Resource Include="Icons\ic_fluent_save_128_filled.png" />
+    <Resource Include="Icons\ic_fluent_stop_128_filled.png" />
   </ItemGroup>
 
   <ItemGroup>

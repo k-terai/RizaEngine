@@ -38,8 +38,8 @@ namespace RizaWpfEditor.Main
             EnableToolBar = true;
             //IconUri = new Uri(Resources.icon_app, UriKind.RelativeOrAbsolute);
             MinimizeImageUri = new Uri(Resources.Icon_Arrow_Minimize_Vertical_Custom, UriKind.RelativeOrAbsolute);
-            MaximizeImageUri = new Uri(Resources.Icon_FullScreenMaximize, UriKind.RelativeOrAbsolute);
-            RestoreImageUri = new Uri(Resources.Icon_FullScreenMinimize, UriKind.RelativeOrAbsolute);
+            MaximizeImageUri = new Uri(Resources.Icon_FullScreen_Maximize, UriKind.RelativeOrAbsolute);
+            RestoreImageUri = new Uri(Resources.Icon_FullScreen_Minimize, UriKind.RelativeOrAbsolute);
             CloseImageUri = new Uri(Resources.Icon_Dismiss, UriKind.RelativeOrAbsolute);
             Title = "None";
             DockingWindows = new();
@@ -52,23 +52,23 @@ namespace RizaWpfEditor.Main
 
         private void InitCommands()
         {
-          //  OpenAssetBrowserCommand = new DelegateCommand((object p) =>
-          //  {
-          //      OpenToolCommand<PanesTemplateSelector.AssetBrowserPaneViewModel>();
-          //  },
-          // (object p) =>
-          // {
-          //     return true;
-          // });
+            //  OpenAssetBrowserCommand = new DelegateCommand((object p) =>
+            //  {
+            //      OpenToolCommand<PanesTemplateSelector.AssetBrowserPaneViewModel>();
+            //  },
+            // (object p) =>
+            // {
+            //     return true;
+            // });
 
-          //  OpenLogViewerCommand = new DelegateCommand((object p) =>
-          //  {
-          //      OpenToolCommand<PanesTemplateSelector.LogViewerPaneViewModel>();
-          //  },
-          //(object p) =>
-          //{
-          //    return true;
-          //});
+            //  OpenLogViewerCommand = new DelegateCommand((object p) =>
+            //  {
+            //      OpenToolCommand<PanesTemplateSelector.LogViewerPaneViewModel>();
+            //  },
+            //(object p) =>
+            //{
+            //    return true;
+            //});
         }
 
         private void OpenToolCommand<T>()
