@@ -87,7 +87,7 @@ int Run(HINSTANCE hInstance, int nCmdShow)
 }
 
 
-LRESULT WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	switch (message)
 	{
