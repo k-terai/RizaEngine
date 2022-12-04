@@ -15,18 +15,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Inc\framework.h">
+    <ClInclude Include="Inc\Common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Src\pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Inc\Platform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\RizaObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\NonCopyable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Src\RizaEnCore.cpp">
+    <ClCompile Include="Src\pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Src\pch.cpp">
+    <ClCompile Include="Src\RizaObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
