@@ -43,7 +43,7 @@
         <StackPanel x:Name="TopStackPanel" Height="22" VerticalAlignment="Top" WindowChrome.IsHitTestVisibleInChrome ="False"  MouseLeftButtonDown="TopStackPanel_MouseLeftButtonDown" MouseMove="TopStackPanel_MouseMove" Orientation="Horizontal" Margin="649,0,141,0" FlowDirection="RightToLeft">
             <Label Content="{Binding Title, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" FontFamily="Yu Gothic UI Semibold" Foreground="{DynamicResource DarkMediumEmphasisTextColorBrush}" Background="{DynamicResource DarkSurfaceColor01dpBrush}" Height="24" FlowDirection="LeftToRight" Margin="50,0,0,0"/>
         </StackPanel>
-        <Button x:Name="MinimizationButton" HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome ="True" Margin="0,0,94,0" ToolTip="Minimization" VerticalAlignment="Top" Width="47" Height="25" Click="MinimizationButton_Click"  d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" Background="{DynamicResource DarkSurfaceColor00dpBrush}" BorderBrush="{DynamicResource DarkSurfaceColor00dpBrush}">
+        <Button x:Name="MinimizationButton" HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome ="True" Margin="0,0,94,0" ToolTip="Minimization" VerticalAlignment="Top" Width="47" Height="25" Click="MinimizationButton_Click"  d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" Background="{DynamicResource DarkSurfaceColor00dpBrush}" BorderBrush="{DynamicResource DarkSurfaceColor00dpBrush}" Opacity="{DynamicResource DarkImageOpacity}">
             <Button.Style>
                 <Style TargetType="{x:Type Button}" BasedOn="{StaticResource CustomButtonWithImageStyle}">
                     <Style.Triggers>
@@ -70,7 +70,7 @@
             </Image>
         </Button>
         <Button x:Name="MaximizeButton" HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome ="True" Margin="0,0,47,0" VerticalAlignment="Top" Width="47" Height="25" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" BorderBrush="{DynamicResource DarkSurfaceColor00dpBrush}" Background="{DynamicResource DarkSurfaceColor00dpBrush}"
-                 Click="MaximizeButton_Click">
+                 Click="MaximizeButton_Click" Opacity="{DynamicResource DarkImageOpacity}">
             <Button.Style>
                 <Style TargetType="{x:Type Button}" BasedOn="{StaticResource CustomButtonWithImageStyle}">
                     <Style.Triggers>
@@ -104,7 +104,7 @@
                 </Image.Style>
             </Image>
         </Button>
-        <Button x:Name="CloseButton" HorizontalAlignment="Right" Style="{StaticResource CustomButtonWithImageStyle}"  WindowChrome.IsHitTestVisibleInChrome ="True" VerticalAlignment="Top" Width="47" Height="25" ToolTip="Close" Click="CloseButton_Click"  d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" Background="{DynamicResource DarkSurfaceColor00dpBrush}" BorderBrush="{DynamicResource DarkSurfaceColor00dpBrush}">
+        <Button x:Name="CloseButton" HorizontalAlignment="Right" Style="{StaticResource CustomButtonWithImageStyle}"  WindowChrome.IsHitTestVisibleInChrome ="True" VerticalAlignment="Top" Width="47" Height="25" ToolTip="Close" Click="CloseButton_Click"  d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" Background="{DynamicResource DarkSurfaceColor00dpBrush}" BorderBrush="{DynamicResource DarkSurfaceColor00dpBrush}" Opacity="{DynamicResource DarkImageOpacity}">
             <Image Source="{Binding CloseImageUri, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Button>
 
@@ -130,7 +130,7 @@
         </Menu>
 
         <Grid Margin="0,22,0,0" Background="{DynamicResource DarkSurfaceColor00dpBrush}">
-            <ToolBar Height="32" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment, Height" Style="{DynamicResource CustomToolBarStyle}" Background="{DynamicResource ToolBarSubMenuBackground}">
+            <ToolBar Height="32" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment, Height" Style="{DynamicResource CustomToolBarStyle}" Background="#FF1C1C1C">
                 <Button Style="{DynamicResource CustomButtonWithImageStyle}" Background="{x:Null}">
                     <Image Source="{Binding Resources.Icon_Save,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}" Stretch="UniformToFill"/>
                 </Button>

@@ -5,16 +5,16 @@
 
 
     <!--Surface Color-->
-    <SolidColorBrush x:Key="DarkSurfaceColor00dpBrush" Color="#FF292929"/>
-    <SolidColorBrush x:Key="DarkSurfaceColor01dpBrush" Color="#FF333333"/>
-    <SolidColorBrush x:Key="DarkSurfaceColor02dpBrush" Color="#FF3D3D3D"/>
-    <SolidColorBrush x:Key="DarkSurfaceColor03dpBrush" Color="#FF474747"/>
-    <SolidColorBrush x:Key="DarkSurfaceColor04dpBrush" Color="#FF515151"/>
-    <SolidColorBrush x:Key="DarkSurfaceColor06dpBrush" Color="#FF5B5B5B"/>
-    <SolidColorBrush x:Key="DarkSurfaceColor08dpBrush" Color="#FF656565"/>
-    <SolidColorBrush x:Key="DarkSurfaceColor12dpBrush" Color="#FF6F6F6F"/>
-    <SolidColorBrush x:Key="DarkSurfaceColor16dpBrush" Color="#FF797979"/>
-    <SolidColorBrush x:Key="DarkSurfaceColor24dpBrush" Color="#FF838383"/>
+    <SolidColorBrush x:Key="DarkSurfaceColor00dpBrush" Color="#FF121212"/>
+    <SolidColorBrush x:Key="DarkSurfaceColor01dpBrush" Color="#FF1C1C1C"/>
+    <SolidColorBrush x:Key="DarkSurfaceColor02dpBrush" Color="#FF262626"/>
+    <SolidColorBrush x:Key="DarkSurfaceColor03dpBrush" Color="#FF303030"/>
+    <SolidColorBrush x:Key="DarkSurfaceColor04dpBrush" Color="#FF3A3A3A"/>
+    <SolidColorBrush x:Key="DarkSurfaceColor06dpBrush" Color="#FF444444"/>
+    <SolidColorBrush x:Key="DarkSurfaceColor08dpBrush" Color="#FF4E4E4E"/>
+    <SolidColorBrush x:Key="DarkSurfaceColor12dpBrush" Color="#FF585858"/>
+    <SolidColorBrush x:Key="DarkSurfaceColor16dpBrush" Color="#FF626262"/>
+    <SolidColorBrush x:Key="DarkSurfaceColor24dpBrush" Color="#FF6C6C6C"/>
 
     <!--Accent Color-->
     <SolidColorBrush x:Key="DarkOrangeAccentColorBrush" Color="#FCC419"/>
@@ -26,7 +26,7 @@
     <SolidColorBrush x:Key="DarkDisabledEmphasisTextColorBrush" Color="#60FFFFFF"/>
 
     <!--Image Opacity-->
-    <system:Double x:Key="DarkImageOpacity">1</system:Double>
+    <system:Double x:Key="DarkImageOpacity">0.78</system:Double>
     <system:Double x:Key="DarkImageDisableOpacity">0.38</system:Double>
     <!--contentPresenter's Opacity will be applied to everything, so set it individually-->
     <system:Double x:Key="CustomButtonWithImageEnableImageOpacity">1</system:Double>
@@ -66,8 +66,8 @@
     <SolidColorBrush x:Key="TabItem.Disabled.Border" Color="#D9D9D9"/>
 
     <!--MenuItem Brushes-->
-    <SolidColorBrush x:Key="Menu.Static.Background" Color="#FF3D3D3D"/>
-    <SolidColorBrush x:Key="Menu.Static.Border" Color="#FF474747"/>
+    <SolidColorBrush x:Key="Menu.Static.Background" Color="#FF3A3A3A"/>
+    <SolidColorBrush x:Key="Menu.Static.Border" Color="#FF444444"/>
     <SolidColorBrush x:Key="Menu.Static.Foreground" Color="#99FFFFFF"/>
     <SolidColorBrush x:Key="Menu.Static.Separator" Color="#FFD7D7D7"/>
     <SolidColorBrush x:Key="Menu.Disabled.Foreground" Color="#FF707070"/>
@@ -81,12 +81,12 @@
     <!--Toolbar Brushes-->
     <SolidColorBrush x:Key="ToolBarButtonHover" Color="#210080FF"/>
     <SolidColorBrush x:Key="ToolBarMenuBorder" Color="#FFB6BDC5"/>
-    <SolidColorBrush x:Key="ToolBarSubMenuBackground" Color="#FF333333"/>
-    <SolidColorBrush x:Key="ToolBarHorizontalBackground" Color="#FF333333"/>
-    <SolidColorBrush x:Key="ToolBarVerticalBackground" Color="#FF333333"/>
+    <SolidColorBrush x:Key="ToolBarSubMenuBackground" Color="#FF1C1C1C"/>
+    <SolidColorBrush x:Key="ToolBarHorizontalBackground" Color="#FF1C1C1C"/>
+    <SolidColorBrush x:Key="ToolBarVerticalBackground" Color="#FF1C1C1C"/>
     <SolidColorBrush x:Key="ToolBarGripper" Color="#FF6D6D6D"/>
-    <SolidColorBrush x:Key="ToolBarToggleButtonHorizontalBackground" Color="#FF333333"/>
-    <SolidColorBrush x:Key="ToolBarToggleButtonVerticalBackground" Color="#FF333333"/>
+    <SolidColorBrush x:Key="ToolBarToggleButtonHorizontalBackground" Color="#FF1C1C1C"/>
+    <SolidColorBrush x:Key="ToolBarToggleButtonVerticalBackground" Color="#FF1C1C1C"/>
 
     <!--Textbox Brushes-->
     <SolidColorBrush x:Key="TextBox.Static.Background" Color="#FFFFFFFF"/>
