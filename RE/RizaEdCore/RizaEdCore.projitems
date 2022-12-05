@@ -18,6 +18,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)CoreSystem\SerializableBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreSystem\ViewModelBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LocalizationSystem\LocalizationManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LogSystem\Debug.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LogSystem\Log.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LogSystem\LogData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ProjectSystem\Project.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ProjectSystem\ProjectData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ProjectSystem\ProjectViewModel.cs" />
