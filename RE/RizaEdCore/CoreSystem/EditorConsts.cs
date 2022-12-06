@@ -21,7 +21,6 @@ namespace RizaEdCore.CoreSystem
         public const int MAX_ASSET_NAME_LENGTH = 50;
         public const string ASSET_IMPORT_FILTER = "Asset files(*.png *.jpg *.obj *.fbx)|*.png;*.fbx;*.obj;*.jpg";
 
-
         // Engines.
         public const string ENGINE_VERSION = "1.0.0";
 
@@ -34,9 +33,13 @@ namespace RizaEdCore.CoreSystem
         public const int LARGE_THUMBNAIL_SIZE = 200;
         public const int HUGE_THUMBNAIL_SIZE = 300;
 
-        // Language code
+        // Language code.
         public const string JAPANACECODE = "ja-jp";
         public const string ENGLISHCODE = "en-us";
+
+        // Windows helper exe.
+        public const string EXPLORER = "EXPLORER.EXE";
+
     }
 }
 
