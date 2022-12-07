@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
   <data name="Display" xml:space="preserve">
     <value>Display(_D)</value>
   </data>
@@ -132,6 +138,9 @@
   <data name="Help" xml:space="preserve">
     <value>Help(_H)</value>
   </data>
+  <data name="Icon-Add-Project" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_album_add_128_filled.png</value>
+  </data>
   <data name="Icon-Arrow-Minimize-Vertical" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_arrow_minimize_vertical_24_regular.png</value>
   </data>
@@ -140,6 +149,9 @@
   </data>
   <data name="Icon-Dismiss" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_dismiss_24_filled.png</value>
+  </data>
+  <data name="Icon-FolderOpen" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_folder_open_128_filled.png</value>
   </data>
   <data name="Icon-FullScreen-Maximize" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_full_screen_maximize_24_regular.png</value>
@@ -151,7 +163,7 @@
     <value>/RizaWpfEditor;component/Icons/ic_fluent_library_128_filled.png</value>
   </data>
   <data name="Icon-Open" xml:space="preserve">
-    <value>/RizaWpfEditor;component/Icons/ic_fluent_folder_open_128_filled.png</value>
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_open_128_filled.png</value>
   </data>
   <data name="Icon-Pause" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_pause_128_filled.png</value>
@@ -170,6 +182,21 @@
   </data>
   <data name="Icon-Undo" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_arrow_undo_128_filled.png</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OpenProject" xml:space="preserve">
+    <value>Open Project</value>
+  </data>
+  <data name="ProjectName" xml:space="preserve">
+    <value>Project Name</value>
+  </data>
+  <data name="SelectLocation" xml:space="preserve">
+    <value>Select Location</value>
+  </data>
+  <data name="Template" xml:space="preserve">
+    <value>Template</value>
   </data>
   <data name="Tools" xml:space="preserve">
     <value>Tools(_T)</value>

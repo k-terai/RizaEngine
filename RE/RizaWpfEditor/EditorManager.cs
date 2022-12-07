@@ -19,6 +19,8 @@ namespace RizaWpfEditor
 {
     public static class EditorManager
     {
+        public const string MAIN_WINDOW_URI_PATH = "Main/MainWindow.xaml";
+
         /// <summary>
         /// Editor startup.
         /// </summary>

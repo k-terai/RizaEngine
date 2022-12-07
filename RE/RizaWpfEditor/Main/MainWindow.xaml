@@ -135,7 +135,7 @@
                     <Image Source="{Binding Resources.Icon_Save,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}" Stretch="UniformToFill"/>
                 </Button>
                 <Button Style="{DynamicResource CustomButtonWithImageStyle}">
-                    <Image Source="{Binding Resources.Icon_Open,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}"/>
+                    <Image Source="{Binding Resources.Icon_FolderOpen,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}"/>
                 </Button>
                 <Button Style="{DynamicResource CustomButtonWithImageStyle}">
                     <Image Source="{Binding Resources.Icon_Library,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}"/>

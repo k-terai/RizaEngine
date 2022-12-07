@@ -61,6 +61,24 @@ namespace RizaWpfEditor {
         }
         
         /// <summary>
+        ///   Cancel に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Create に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Create {
+            get {
+                return ResourceManager.GetString("Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Display(_D) に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Display {
@@ -106,6 +124,15 @@ namespace RizaWpfEditor {
         }
         
         /// <summary>
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_album_add_128_filled.png に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Icon_Add_Project {
+            get {
+                return ResourceManager.GetString("Icon-Add-Project", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   /RizaWpfEditor;component/Icons/ic_fluent_arrow_minimize_vertical_24_regular.png に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Icon_Arrow_Minimize_Vertical {
@@ -129,6 +156,15 @@ namespace RizaWpfEditor {
         public static string Icon_Dismiss {
             get {
                 return ResourceManager.GetString("Icon-Dismiss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_folder_open_128_filled.png に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Icon_FolderOpen {
+            get {
+                return ResourceManager.GetString("Icon-FolderOpen", resourceCulture);
             }
         }
         
@@ -160,7 +196,7 @@ namespace RizaWpfEditor {
         }
         
         /// <summary>
-        ///   /RizaWpfEditor;component/Icons/ic_fluent_folder_open_128_filled.png に類似しているローカライズされた文字列を検索します。
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_open_128_filled.png に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Icon_Open {
             get {
@@ -219,6 +255,51 @@ namespace RizaWpfEditor {
         public static string Icon_Undo {
             get {
                 return ResourceManager.GetString("Icon-Undo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Location {
+            get {
+                return ResourceManager.GetString("Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Open Project に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string OpenProject {
+            get {
+                return ResourceManager.GetString("OpenProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Project Name に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ProjectName {
+            get {
+                return ResourceManager.GetString("ProjectName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Select Location に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string SelectLocation {
+            get {
+                return ResourceManager.GetString("SelectLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Template に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Template {
+            get {
+                return ResourceManager.GetString("Template", resourceCulture);
             }
         }
         
