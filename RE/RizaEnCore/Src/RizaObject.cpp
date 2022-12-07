@@ -7,12 +7,12 @@
 using namespace std;
 using namespace RizaEngine;
 
-RizaEngine::RizaObject::RizaObject()
+RizaObject::RizaObject()
 {
 
 }
 
-RizaEngine::RizaObject::~RizaObject()
+RizaObject::~RizaObject()
 {
 
 }
