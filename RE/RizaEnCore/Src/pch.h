@@ -4,6 +4,8 @@
 #ifndef PCH_H
 #define PCH_H
 
+#include<functional>
+
 #include "Common.h"
 #include "Platform.h"
 
