@@ -351,3 +351,6 @@ MigrationBackup/
 
 # Mac meta file
 .DS_Store
+
+# .Net local debugger setting
+launchSettings.json
