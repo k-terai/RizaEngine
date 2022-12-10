@@ -1,14 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-
     <IsPackable>false</IsPackable>
-
     <Platforms>AnyCPU;x64</Platforms>
-
     <BaseOutputPath>$(SolutionDir)Builds\</BaseOutputPath>
   </PropertyGroup>
 
@@ -24,7 +21,5 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
-
-  <Import Project="..\RizaEdCore\RizaEdCore.projitems" Label="Shared" />
 
 </Project>
