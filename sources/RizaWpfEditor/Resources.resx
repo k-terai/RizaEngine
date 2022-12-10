@@ -186,6 +186,9 @@
   <data name="Location" xml:space="preserve">
     <value />
   </data>
+  <data name="NewProject" xml:space="preserve">
+    <value>New Project...</value>
+  </data>
   <data name="OpenProject" xml:space="preserve">
     <value>Open Project</value>
   </data>

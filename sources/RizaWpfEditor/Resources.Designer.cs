@@ -268,6 +268,15 @@ namespace RizaWpfEditor {
         }
         
         /// <summary>
+        ///   New Project... に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string NewProject {
+            get {
+                return ResourceManager.GetString("NewProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Open Project に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string OpenProject {

@@ -186,6 +186,9 @@
   <data name="Location" xml:space="preserve">
     <value>保存先</value>
   </data>
+  <data name="NewProject" xml:space="preserve">
+    <value>新規プロジェクト</value>
+  </data>
   <data name="OpenProject" xml:space="preserve">
     <value>プロジェクトを開く</value>
   </data>

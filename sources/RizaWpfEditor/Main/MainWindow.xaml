@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:RizaWpfEditor.Main"
         xmlns:windowsystem="clr-namespace:RizaEdCore.WindowSystem"
         xmlns:service="clr-namespace:RizaWpfEditor.Service" 
+        xmlns:command="clr-namespace:RizaWpfEditor.Commands" 
         x:Class="RizaWpfEditor.Main.MainWindow"
         xmlns:sys="clr-namespace:System;assembly=System.Runtime"
         xmlns:converter="clr-namespace:RizaWpfEditor.Converters"
@@ -37,6 +38,11 @@
         <sys:Boolean x:Key="TRUE">True</sys:Boolean>
         <sys:Boolean x:Key="FALSE">False</sys:Boolean>
     </Window.Resources>
+
+    <Window.InputBindings>
+        <KeyBinding Command="{x:Static command:EditorCommand.OpenProjectWizardCommand}" Gesture="Ctrl+Shift+N" />
+        <KeyBinding Command="{x:Static command:EditorCommand.OpenProjectCommand}" Gesture="Ctrl+Shift+O" />
+    </Window.InputBindings>
 
     <Grid Background="{DynamicResource DarkSurfaceColor00dpBrush}">
         <Image Margin="0,-1,0,0" Source="{Binding IconUri, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Height="25" HorizontalAlignment="Left" Width="25" VerticalAlignment="Top"/>
@@ -110,7 +116,14 @@
 
         <Menu WindowChrome.IsHitTestVisibleInChrome="True" Background="{DynamicResource DarkSurfaceColor00dpBrush}" Foreground="{DynamicResource DarkMediumEmphasisTextColorBrush}" Margin="26,0,500,609">
             <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.File, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Height="22">
-                <MenuItem Header="MenuItem"/>
+                <MenuItem Header="{Binding Resources.NewProject, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" InputGestureText="Ctrl+Shift+N">
+                    <MenuItem.Icon>
+                        <Image Source="{Binding Resources.Icon_Add_Project,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}" Stretch="UniformToFill"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="{Binding Resources.OpenProject, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" InputGestureText="Ctrl+Shift+O">
+                 
+                </MenuItem>
             </MenuItem>
             <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.Edit, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Height="22">
                 <MenuItem Header="MenuItem"/>
@@ -130,7 +143,13 @@
         </Menu>
 
         <Grid Margin="0,22,0,0" Background="{DynamicResource DarkSurfaceColor00dpBrush}">
-            <ToolBar Height="32" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment, Height" Style="{DynamicResource CustomToolBarStyle}" Background="#FF1C1C1C">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <ToolBar Height="32" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment, Height" Style="{DynamicResource CustomToolBarStyle}"
+                     Visibility="{Binding EnableToolBar,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource BoolToVisibilityConverter}}">
                 <Button Style="{DynamicResource CustomButtonWithImageStyle}" Background="{x:Null}">
                     <Image Source="{Binding Resources.Icon_Save,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}" Stretch="UniformToFill"/>
                 </Button>
