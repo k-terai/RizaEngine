@@ -184,13 +184,16 @@
     <value>/RizaWpfEditor;component/Icons/ic_fluent_arrow_undo_128_filled.png</value>
   </data>
   <data name="Location" xml:space="preserve">
-    <value />
+    <value>Location</value>
   </data>
   <data name="NewProject" xml:space="preserve">
     <value>New Project...</value>
   </data>
   <data name="OpenProject" xml:space="preserve">
     <value>Open Project</value>
+  </data>
+  <data name="OpenProjectMenu" xml:space="preserve">
+    <value>Open Project...</value>
   </data>
   <data name="ProjectName" xml:space="preserve">
     <value>Project Name</value>

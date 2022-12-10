@@ -116,12 +116,14 @@
 
         <Menu WindowChrome.IsHitTestVisibleInChrome="True" Background="{DynamicResource DarkSurfaceColor00dpBrush}" Foreground="{DynamicResource DarkMediumEmphasisTextColorBrush}" Margin="26,0,500,609">
             <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.File, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Height="22">
-                <MenuItem Header="{Binding Resources.NewProject, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" InputGestureText="Ctrl+Shift+N">
+                <MenuItem Header="{Binding Resources.NewProject, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" InputGestureText="Ctrl+Shift+N"
+                         Command="{x:Static command:EditorCommand.OpenProjectWizardCommand}">
                     <MenuItem.Icon>
                         <Image Source="{Binding Resources.Icon_Add_Project,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}" Stretch="UniformToFill"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="{Binding Resources.OpenProject, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" InputGestureText="Ctrl+Shift+O">
+                <MenuItem Header="{Binding Resources.OpenProjectMenu, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" InputGestureText="Ctrl+Shift+O"
+                          Command="{x:Static command:EditorCommand.OpenProjectCommand}">
                  
                 </MenuItem>
             </MenuItem>

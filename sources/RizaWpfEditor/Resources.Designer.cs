@@ -259,7 +259,7 @@ namespace RizaWpfEditor {
         }
         
         /// <summary>
-        ///    に類似しているローカライズされた文字列を検索します。
+        ///   Location に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Location {
             get {
@@ -282,6 +282,15 @@ namespace RizaWpfEditor {
         public static string OpenProject {
             get {
                 return ResourceManager.GetString("OpenProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Open Project... に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string OpenProjectMenu {
+            get {
+                return ResourceManager.GetString("OpenProjectMenu", resourceCulture);
             }
         }
         

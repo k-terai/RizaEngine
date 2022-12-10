@@ -124,19 +124,19 @@
     <value>作成</value>
   </data>
   <data name="Display" xml:space="preserve">
-    <value>Display(_D)</value>
+    <value>表示(_D)</value>
   </data>
   <data name="Edit" xml:space="preserve">
-    <value>Edit(_E)</value>
+    <value>編集(_E)</value>
   </data>
   <data name="File" xml:space="preserve">
-    <value>File(_F)</value>
+    <value>ファイル(_F)</value>
   </data>
   <data name="Game" xml:space="preserve">
-    <value>Game(_G)</value>
+    <value>ゲーム(_G)</value>
   </data>
   <data name="Help" xml:space="preserve">
-    <value>Help(_H)</value>
+    <value>ヘルプ(_H)</value>
   </data>
   <data name="Icon-Add-Project" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_album_add_128_filled.png</value>
@@ -192,6 +192,9 @@
   <data name="OpenProject" xml:space="preserve">
     <value>プロジェクトを開く</value>
   </data>
+  <data name="OpenProjectMenu" xml:space="preserve">
+    <value>プロジェクトを開く...</value>
+  </data>
   <data name="ProjectName" xml:space="preserve">
     <value>プロジェクト名</value>
   </data>
@@ -202,6 +205,6 @@
     <value>テンプレート</value>
   </data>
   <data name="Tools" xml:space="preserve">
-    <value>Tools(_T)</value>
+    <value>ツール(_T)</value>
   </data>
 </root>
