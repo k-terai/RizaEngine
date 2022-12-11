@@ -151,11 +151,29 @@ namespace RizaWpfEditor {
         }
         
         /// <summary>
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_broom_128_filled.png に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Icon_Broom {
+            get {
+                return ResourceManager.GetString("Icon-Broom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   /RizaWpfEditor;component/Icons/ic_fluent_dismiss_24_filled.png に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Icon_Dismiss {
             get {
                 return ResourceManager.GetString("Icon-Dismiss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_error_circle_128_filled.png に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Icon_Error {
+            get {
+                return ResourceManager.GetString("Icon_Error", resourceCulture);
             }
         }
         
@@ -183,6 +201,15 @@ namespace RizaWpfEditor {
         public static string Icon_FullScreen_Minimize {
             get {
                 return ResourceManager.GetString("Icon-FullScreen-Minimize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_info_128_filled.png に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Icon_Info {
+            get {
+                return ResourceManager.GetString("Icon_Info", resourceCulture);
             }
         }
         
@@ -255,6 +282,15 @@ namespace RizaWpfEditor {
         public static string Icon_Undo {
             get {
                 return ResourceManager.GetString("Icon-Undo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_warning_128_filled.png に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Icon_Warning {
+            get {
+                return ResourceManager.GetString("Icon_Warning", resourceCulture);
             }
         }
         

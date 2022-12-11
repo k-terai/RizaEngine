@@ -147,6 +147,9 @@
   <data name="Icon-Arrow-Minimize-Vertical-Custom" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_arrow_minimize_vertical_24_regular-custom.png</value>
   </data>
+  <data name="Icon-Broom" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_broom_128_filled.png</value>
+  </data>
   <data name="Icon-Dismiss" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_dismiss_24_filled.png</value>
   </data>
@@ -182,6 +185,15 @@
   </data>
   <data name="Icon-Undo" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_arrow_undo_128_filled.png</value>
+  </data>
+  <data name="Icon_Error" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_error_circle_128_filled.png</value>
+  </data>
+  <data name="Icon_Info" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_info_128_filled.png</value>
+  </data>
+  <data name="Icon_Warning" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_warning_128_filled.png</value>
   </data>
   <data name="Location" xml:space="preserve">
     <value>Location</value>
