@@ -22,4 +22,6 @@
     </PackageReference>
   </ItemGroup>
 
+  <Import Project="..\RizaEdCore\RizaEdCore.projitems" Label="Shared" />
+
 </Project>

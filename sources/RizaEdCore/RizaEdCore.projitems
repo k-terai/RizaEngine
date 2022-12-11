@@ -21,6 +21,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)LogSystem\Debug.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LogSystem\Log.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LogSystem\LogData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NativeSystem\DllContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NativeSystem\DllInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NativeSystem\NativeLibraryManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ProjectSystem\Project.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ProjectSystem\ProjectData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ProjectSystem\ProjectViewModel.cs" />

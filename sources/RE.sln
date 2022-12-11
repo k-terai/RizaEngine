@@ -88,6 +88,7 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		RizaEdCore\RizaEdCore.projitems*{38d44b26-51f1-4023-acd3-c67b8f4c3638}*SharedItemsImports = 5
 		RizaEdCore\RizaEdCore.projitems*{6b77dca0-392f-472f-b58e-9949a31f2dad}*SharedItemsImports = 13
+		RizaEdCore\RizaEdCore.projitems*{b0807298-8803-4ab6-9e6e-461689148cca}*SharedItemsImports = 5
 		RizaEdCore\RizaEdCore.projitems*{c26c9287-b9f0-4292-89c1-c7f0fcffdbcf}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
