@@ -10,7 +10,7 @@ namespace RizaEngine
 {
 	uint32 Fnv1Hash32(ctstring string)
 	{
-		auto hval = FNV_BASIS_32;
+		auto hval = c_Fnv_Basis_32;
 		auto current = (uint8*)string;
 
 		while (*current != 0)
@@ -25,7 +25,7 @@ namespace RizaEngine
 
 	uint32 Fnv1Hash32(uint8* const bytes, const size_t length)
 	{
-		auto hval = FNV_BASIS_32;
+		auto hval = c_Fnv_Basis_32;
 		auto current = bytes;
 
 		while (*current != 0)
@@ -40,7 +40,7 @@ namespace RizaEngine
 
 	uint64 Fnv1Hash64(ctstring string)
 	{
-		auto hval = FNV_BASIS_64;
+		auto hval = c_Fnv_Basis_64;
 		auto current = (uint8*)string;
 
 		while (*current != 0)
@@ -55,7 +55,7 @@ namespace RizaEngine
 
 	uint64 Fnv1Hash64(uint8* const bytes, const size_t length)
 	{
-		auto hval = FNV_BASIS_64;
+		auto hval = c_Fnv_Basis_64;
 		auto current = bytes;
 
 		while (*current != 0)
@@ -70,7 +70,7 @@ namespace RizaEngine
 
 	uint32 Fnv1HashLowercase32(ctstring string)
 	{
-		auto hval = FNV_BASIS_32;
+		auto hval = c_Fnv_Basis_32;
 		auto current = (unsigned char*)string;
 
 		while (*current != 0)
@@ -90,7 +90,7 @@ namespace RizaEngine
 
 	uint64 Fnv1HashLowercase64(ctstring string)
 	{
-		auto hval = FNV_BASIS_64;
+		auto hval = c_Fnv_Basis_64;
 		auto current = (unsigned char*)string;
 
 		while (*current != 0)

@@ -7,10 +7,10 @@
 
 namespace RizaEngine
 {
-	static const uint32_t FNV_BASIS_32 = 2166136261U;
-	static const uint64_t FNV_BASIS_64 = 14695981039346656037U;
-	static const uint32_t FNV_PRIME_32 = 16777619U;
-	static const uint64_t FNV_PRIME_64 = 1099511628211LLU;
+	static const uint32_t c_Fnv_Basis_32 = 2166136261U;
+	static const uint64_t c_Fnv_Basis_64 = 14695981039346656037U;
+	static const uint32_t c_Fnv_Prime_32 = 16777619U;
+	static const uint64_t c_Fnv_Prime_64 = 1099511628211LLU;
 
 	uint32 Fnv1Hash32(ctstring string);
 	uint32 Fnv1Hash32(uint8* const bytes, const size_t length);
