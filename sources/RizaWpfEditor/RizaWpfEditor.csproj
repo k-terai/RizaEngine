@@ -51,6 +51,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ThirdParty\AvalonDock-master\source\AvalonDock.Themes.Metro\AvalonDock.Themes.Metro.csproj" />
+    <ProjectReference Include="..\ThirdParty\AvalonDock-master\source\AvalonDock\AvalonDock.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Icons\ic_fluent_album_add_128_filled.png" />
     <Resource Include="Icons\ic_fluent_arrow_minimize_vertical_24_regular-custom.png" />
     <Resource Include="Icons\ic_fluent_arrow_minimize_vertical_24_regular.png" />
