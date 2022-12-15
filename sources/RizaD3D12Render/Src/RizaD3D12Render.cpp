@@ -2,7 +2,7 @@
 // Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
 
 #include "pch.h"
-#include "framework.h"
+#include "RizaD3D12Render.h"
 
 
 void fnRizaD3D12Render()

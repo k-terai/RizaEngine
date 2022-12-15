@@ -4,6 +4,6 @@
 #ifndef PCH_H
 #define PCH_H
 
-#include "framework.h"
+#include "RizaD3D12Render.h"
 
 #endif //PCH_H
