@@ -10,6 +10,9 @@
         x:Class="RizaWpfEditor.Main.MainWindow"
         xmlns:sys="clr-namespace:System;assembly=System.Runtime"
         xmlns:converter="clr-namespace:RizaWpfEditor.Converters"
+        xmlns:panes="clr-namespace:RizaWpfEditor.Panes"
+        xmlns:logviewer="clr-namespace:RizaWpfEditor.LogViewer"
+        xmlns:layout="clr-namespace:RizaWpfEditor.Layout"
         mc:Ignorable="d"
         Title="{Binding Title, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
         Height="{Binding Height, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
@@ -137,7 +140,12 @@
                 <MenuItem Header="MenuItem"/>
             </MenuItem>
             <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.Tools, Mode=OneWay, Source={x:Static service:ResourceService.Current}}" Foreground="{DynamicResource DarkMediumEmphasisTextColorBrush}" Height="22">
-                <MenuItem Header="MenuItem"/>
+                <MenuItem Header="{Binding Resources.LogViewer, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}"
+                         Command="{Binding OpenLogViewerCommand,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}">
+                    <MenuItem.Icon>
+                        <Image Source="{Binding Resources.Icon_View_Desktop,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}" Stretch="UniformToFill"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.Help, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Height="22">
                 <MenuItem Header="MenuItem"/>
@@ -180,6 +188,71 @@
                 </Button>
             </ToolBar>
 
+            <DockingManager x:Name="DockingMgr"
+                           AllowMixedOrientation="True"
+                           BorderThickness="1" Background="{DynamicResource DarkSurfaceColor00dpBrush}"
+                        AnchorablesSource="{Binding Anchorables}"
+			            DocumentsSource="{Binding Documents}"
+                        ActiveContent="{Binding ActiveContent, Converter={StaticResource ActiveContentConverter}, Mode=TwoWay}"
+                        Grid.Row="1">
+                <DockingManager.Theme>
+                    <MetroTheme/>
+                </DockingManager.Theme>
+
+                <DockingManager.LayoutItemTemplateSelector>
+                    <panes:PanesTemplateSelector>
+                        <!--<panes:PanesTemplateSelector.AssetBrowserPaneTemplate>
+                            <DataTemplate>
+                                <ab:AssetBrowserControl/>
+                            </DataTemplate>
+                        </panes:PanesTemplateSelector.AssetBrowserPaneTemplate>-->
+                        <panes:PanesTemplateSelector.LogViewerPaneTemplate>
+                            <DataTemplate>
+                                <logviewer:LogViewerControl/>
+                            </DataTemplate>
+                        </panes:PanesTemplateSelector.LogViewerPaneTemplate>
+                    </panes:PanesTemplateSelector>
+                </DockingManager.LayoutItemTemplateSelector>
+
+                <DockingManager.LayoutItemContainerStyleSelector>
+                    <panes:PanesStyleSelector>
+                        <panes:PanesStyleSelector.AnchorableStyle>
+                            <Style TargetType="{x:Type LayoutAnchorableItem}">
+                                <Setter Property="Title" Value="{Binding Model.Title}" />
+                                <Setter Property="CanClose" Value="{Binding Model.CanClose}" />
+                                <Setter Property="IconSource" Value="{Binding Model.IconSource}" />
+                                <Setter Property="CloseCommand" Value="{Binding Model.CloseCommand}" />
+                                <Setter Property="Visibility" Value="{Binding Model.IsVisible, ConverterParameter={StaticResource FALSE}, Converter={StaticResource BoolToVisibilityConverter}, Mode=TwoWay}" />
+                                <Setter Property="ContentId" Value="{Binding Model.ContentId}" />
+                                <Setter Property="IsSelected" Value="{Binding Model.IsSelected, Mode=TwoWay}" />
+                                <Setter Property="IsActive" Value="{Binding Model.IsActive, Mode=TwoWay}" />
+                            </Style>
+                        </panes:PanesStyleSelector.AnchorableStyle>
+                        <panes:PanesStyleSelector.DocumentStyle>
+                            <Style TargetType="{x:Type LayoutItem}">
+                                <Setter Property="Title" Value="{Binding Model.Title}" />
+                                <Setter Property="CanClose" Value="{Binding Model.CanClose}" />
+                                <Setter Property="ToolTip" Value="{Binding Model.FilePath}" />
+                                <Setter Property="CloseCommand" Value="{Binding Model.CloseCommand}" />
+                                <Setter Property="IconSource" Value="{Binding Model.IconSource}" />
+                                <Setter Property="ContentId" Value="{Binding Model.ContentId}" />
+                            </Style>
+                        </panes:PanesStyleSelector.DocumentStyle>
+                    </panes:PanesStyleSelector>
+                </DockingManager.LayoutItemContainerStyleSelector>
+
+                <DockingManager.LayoutUpdateStrategy>
+                    <layout:LayoutInitializer />
+                </DockingManager.LayoutUpdateStrategy>
+
+                <LayoutRoot x:Name="_layoutRoot">
+                    <LayoutPanel Orientation="Horizontal">
+                        <LayoutAnchorablePane Name="LeftPane" DockWidth="150"/>
+                        <LayoutDocumentPane x:Name="CenterDocument" />
+                        <LayoutAnchorablePane Name="RightPane" DockWidth="150"/>
+                    </LayoutPanel>
+                </LayoutRoot>
+            </DockingManager>
         </Grid>
     </Grid>
 </Window>

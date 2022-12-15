@@ -47,6 +47,7 @@
     <None Remove="Icons\ic_fluent_play_128_filled.png" />
     <None Remove="Icons\ic_fluent_save_128_filled.png" />
     <None Remove="Icons\ic_fluent_stop_128_filled.png" />
+    <None Remove="Icons\ic_fluent_view_desktop_128_filled.png" />
     <None Remove="Icons\ic_fluent_warning_128_filled.png" />
   </ItemGroup>
 
@@ -74,6 +75,7 @@
     <Resource Include="Icons\ic_fluent_play_128_filled.png" />
     <Resource Include="Icons\ic_fluent_save_128_filled.png" />
     <Resource Include="Icons\ic_fluent_stop_128_filled.png" />
+    <Resource Include="Icons\ic_fluent_view_desktop_128_filled.png" />
     <Resource Include="Icons\ic_fluent_warning_128_filled.png" />
   </ItemGroup>
 

@@ -286,6 +286,15 @@ namespace RizaWpfEditor {
         }
         
         /// <summary>
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_view_desktop_128_filled.png に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Icon_View_Desktop {
+            get {
+                return ResourceManager.GetString("Icon_View_Desktop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   /RizaWpfEditor;component/Icons/ic_fluent_warning_128_filled.png に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Icon_Warning {
@@ -300,6 +309,24 @@ namespace RizaWpfEditor {
         public static string Location {
             get {
                 return ResourceManager.GetString("Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Log Viewer に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string LogViewer {
+            get {
+                return ResourceManager.GetString("LogViewer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   LogViewer is a tool that views engine and editor log and execute console command. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string LogViewerToolTip {
+            get {
+                return ResourceManager.GetString("LogViewerToolTip", resourceCulture);
             }
         }
         

@@ -192,11 +192,20 @@
   <data name="Icon_Info" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_info_128_filled.png</value>
   </data>
+  <data name="Icon_View_Desktop" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_view_desktop_128_filled.png</value>
+  </data>
   <data name="Icon_Warning" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_warning_128_filled.png</value>
   </data>
   <data name="Location" xml:space="preserve">
     <value>Location</value>
+  </data>
+  <data name="LogViewer" xml:space="preserve">
+    <value>Log Viewer</value>
+  </data>
+  <data name="LogViewerToolTip" xml:space="preserve">
+    <value>LogViewer is a tool that views engine and editor log and execute console command.</value>
   </data>
   <data name="NewProject" xml:space="preserve">
     <value>New Project...</value>

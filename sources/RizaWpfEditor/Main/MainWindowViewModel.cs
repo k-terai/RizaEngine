@@ -3,6 +3,7 @@
 
 using RizaEdCore.WindowSystem;
 using RizaEdShare.CoreSystem;
+using RizaWpfEditor.Panes;
 using RizaWpfEditor.Service;
 using System;
 using System.Collections.Generic;
@@ -61,14 +62,14 @@ namespace RizaWpfEditor.Main
             //     return true;
             // });
 
-            //  OpenLogViewerCommand = new DelegateCommand((object p) =>
-            //  {
-            //      OpenToolCommand<PanesTemplateSelector.LogViewerPaneViewModel>();
-            //  },
-            //(object p) =>
-            //{
-            //    return true;
-            //});
+            OpenLogViewerCommand = new DelegateCommand((object p) =>
+             {
+                 OpenToolCommand<PanesTemplateSelector.LogViewerPaneViewModel>();
+             },
+           (object p) =>
+           {
+               return true;
+           });
         }
 
         private void OpenToolCommand<T>()
