@@ -19,7 +19,7 @@
     </UserControl.Resources>
 
     <Grid Background="{DynamicResource DarkSurfaceColor00dpBrush}">
-        <ToolBar Height="27" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment" Style="{DynamicResource CustomToolBarStyle}" Background="{DynamicResource DarkSurfaceColor01dpBrush}">
+        <ToolBar Height="28" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment" Style="{DynamicResource CustomToolBarStyle}" Background="{DynamicResource DarkSurfaceColor01dpBrush}">
             <Button Command="{Binding ToggleDisplayLogCommand,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" CommandParameter="{x:Static core:EditorCommon+LogType.Information}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <Button.Style>
                     <Style TargetType="Button" BasedOn="{StaticResource CustomButtonWithImageStyle}">
