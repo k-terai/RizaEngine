@@ -155,7 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Inc\framework.h" />
+    <ClInclude Include="Inc\RizaFramework.h" />
     <ClInclude Include="Src\pch.h" />
   </ItemGroup>
   <ItemGroup>

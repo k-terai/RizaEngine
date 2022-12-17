@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Inc\framework.h">
+    <ClInclude Include="Src\pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Src\pch.h">
+    <ClInclude Include="Inc\RizaFramework.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

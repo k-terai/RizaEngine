@@ -36,6 +36,15 @@
     <ClInclude Include="Inc\Logger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Inc\IModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\FrameworkGlobalEnvironment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\IRenderModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\pch.cpp">

@@ -3,8 +3,16 @@
 
 #include "pch.h"
 #include "RizaD3D12Render.h"
+#include"RenderModule.h"
 
-
-void fnRizaD3D12Render()
+namespace RizaEngine
 {
+	namespace RizaD3D12Render
+	{
+		RizaEngine::IRenderModule* const GetRenderModule()
+		{
+			static RenderModule module;
+			return &module;
+		}
+	}
 }

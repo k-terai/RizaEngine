@@ -157,10 +157,13 @@
   <ItemGroup>
     <ClInclude Include="Inc\Common.h" />
     <ClInclude Include="Inc\Hasher.h" />
+    <ClInclude Include="Inc\IModule.h" />
+    <ClInclude Include="Inc\IRenderModule.h" />
     <ClInclude Include="Inc\Logger.h" />
     <ClInclude Include="Inc\NonCopyable.h" />
     <ClInclude Include="Inc\Platform.h" />
     <ClInclude Include="Inc\RizaObject.h" />
+    <ClInclude Include="Inc\FrameworkGlobalEnvironment.h" />
     <ClInclude Include="Src\pch.h" />
   </ItemGroup>
   <ItemGroup>

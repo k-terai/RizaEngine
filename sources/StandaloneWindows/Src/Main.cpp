@@ -10,9 +10,10 @@
 #include <string>
 #include <wrl.h>
 #include <shellapi.h>
-#include"framework.h"
+#include"RizaFramework.h"
 
 using namespace std;
+using namespace RizaEngine;
 
 HWND hwnd;
 bool useWarpDevice = false;
@@ -54,6 +55,9 @@ int Run(HINSTANCE hInstance, int nCmdShow)
 	RECT windowRect = { 0, 0, static_cast<LONG>(width), static_cast<LONG>(height) };
 	AdjustWindowRect(&windowRect, WS_OVERLAPPEDWINDOW, FALSE);
 
+	auto ptr = RizaEngine::RizaFramework::GetInstance();
+	ptr->Initialize();
+
 	// Create the window and store a handle to it.
 	hwnd = CreateWindow(
 		windowClass.lpszClassName,
@@ -68,9 +72,8 @@ int Run(HINSTANCE hInstance, int nCmdShow)
 		hInstance,
 		nullptr);
 
-
-
 	ShowWindow(hwnd, nCmdShow);
+	ptr->Startup();
 
 	MSG msg = {};
 	while (msg.message != WM_QUIT)
@@ -80,7 +83,11 @@ int Run(HINSTANCE hInstance, int nCmdShow)
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 		}
+
+		ptr->Update();
 	}
+
+	ptr->Terminate();
 
 	// Return this part of the WM_QUIT message to Windows.
 	return static_cast<char>(msg.wParam);
