@@ -18,15 +18,15 @@ void RenderModule::Initialize(FrameworkGlobalEnvironment* const fge)
 
 void RenderModule::Startup()
 {
-	int a = 0;
+	
 }
 
 void RenderModule::Update()
 {
-	int a = 0;
+	
 }
 
 void RizaEngine::RenderModule::Terminate()
 {
-	int a = 0;
+	
 }
