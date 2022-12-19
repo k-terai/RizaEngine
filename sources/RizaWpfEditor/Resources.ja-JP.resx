@@ -132,11 +132,20 @@
   <data name="File" xml:space="preserve">
     <value>ファイル(_F)</value>
   </data>
+  <data name="File_NoKey" xml:space="preserve">
+    <value>ファイル</value>
+  </data>
   <data name="Game" xml:space="preserve">
     <value>ゲーム(_G)</value>
   </data>
+  <data name="Game_NoKey" xml:space="preserve">
+    <value>ゲーム</value>
+  </data>
   <data name="Help" xml:space="preserve">
     <value>ヘルプ(_H)</value>
+  </data>
+  <data name="Help_NoKey" xml:space="preserve">
+    <value>ヘルプ</value>
   </data>
   <data name="Icon-Add-Project" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_album_add_128_filled.png</value>
@@ -222,10 +231,16 @@
   <data name="SelectLocation" xml:space="preserve">
     <value>保存先を選択</value>
   </data>
+  <data name="StartPageToolTip" xml:space="preserve">
+    <value>スタートページは、すべてのエディターツールとエンジンを起動するためのエントリ ポイントです。</value>
+  </data>
   <data name="Template" xml:space="preserve">
     <value>テンプレート</value>
   </data>
   <data name="Tools" xml:space="preserve">
     <value>ツール(_T)</value>
+  </data>
+  <data name="Tools_NoKey" xml:space="preserve">
+    <value>ツール</value>
   </data>
 </root>

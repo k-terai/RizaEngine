@@ -12,6 +12,7 @@
         xmlns:converter="clr-namespace:RizaWpfEditor.Converters"
         xmlns:panes="clr-namespace:RizaWpfEditor.Panes"
         xmlns:logviewer="clr-namespace:RizaWpfEditor.LogViewer"
+        xmlns:startpage="clr-namespace:RizaWpfEditor.StartPage"
         xmlns:layout="clr-namespace:RizaWpfEditor.Layout"
         mc:Ignorable="d"
         Title="{Binding Title, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
@@ -49,7 +50,7 @@
 
     <Grid Background="{DynamicResource DarkSurfaceColor00dpBrush}">
         <Image Margin="0,-1,0,0" Source="{Binding IconUri, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Height="25" HorizontalAlignment="Left" Width="25" VerticalAlignment="Top"/>
-        <StackPanel x:Name="TopStackPanel" Height="22" VerticalAlignment="Top" WindowChrome.IsHitTestVisibleInChrome ="False"  MouseLeftButtonDown="TopStackPanel_MouseLeftButtonDown" MouseMove="TopStackPanel_MouseMove" Orientation="Horizontal" Margin="649,0,141,0" FlowDirection="RightToLeft">
+        <StackPanel x:Name="TopStackPanel" Height="22" VerticalAlignment="Top" WindowChrome.IsHitTestVisibleInChrome ="False"  MouseLeftButtonDown="TopStackPanel_MouseLeftButtonDown" MouseMove="TopStackPanel_MouseMove" Orientation="Horizontal" Margin="295,0,141,0" FlowDirection="RightToLeft" d:LayoutOverrides="HorizontalAlignment">
             <Label Content="{Binding Title, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" FontFamily="Yu Gothic UI Semibold" Foreground="{DynamicResource DarkMediumEmphasisTextColorBrush}" Background="{DynamicResource DarkSurfaceColor01dpBrush}" Height="24" FlowDirection="LeftToRight" Margin="50,0,0,0"/>
         </StackPanel>
         <Button x:Name="MinimizationButton" HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome ="True" Margin="0,0,94,0" ToolTip="Minimization" VerticalAlignment="Top" Width="47" Height="25" Click="MinimizationButton_Click"  d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" Background="{DynamicResource DarkSurfaceColor00dpBrush}" BorderBrush="{DynamicResource DarkSurfaceColor00dpBrush}" Opacity="{DynamicResource DarkImageOpacity}">
@@ -117,8 +118,8 @@
             <Image Source="{Binding CloseImageUri, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Button>
 
-        <Menu WindowChrome.IsHitTestVisibleInChrome="True" Background="{DynamicResource DarkSurfaceColor00dpBrush}" Foreground="{DynamicResource DarkMediumEmphasisTextColorBrush}" Margin="26,0,500,609">
-            <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.File, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Height="22">
+        <Menu WindowChrome.IsHitTestVisibleInChrome="True" Background="{DynamicResource DarkSurfaceColor00dpBrush}" Foreground="{DynamicResource DarkMediumEmphasisTextColorBrush}" Margin="26,0,710,609">
+            <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.File_NoKey, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Height="22">
                 <MenuItem Header="{Binding Resources.NewProject, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" InputGestureText="Ctrl+Shift+N"
                          Command="{x:Static command:EditorCommand.OpenProjectWizardCommand}">
                     <MenuItem.Icon>
@@ -127,19 +128,13 @@
                 </MenuItem>
                 <MenuItem Header="{Binding Resources.OpenProjectMenu, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" InputGestureText="Ctrl+Shift+O"
                           Command="{x:Static command:EditorCommand.OpenProjectCommand}">
-                 
+
                 </MenuItem>
             </MenuItem>
-            <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.Edit, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Height="22">
+            <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.Game_NoKey, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Height="22">
                 <MenuItem Header="MenuItem"/>
             </MenuItem>
-            <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.Display, Mode=OneWay, Source={x:Static service:ResourceService.Current}}" Foreground="{DynamicResource DarkMediumEmphasisTextColorBrush}" Height="22">
-                <MenuItem Header="Toggle Toolbar" Height="22" IsCheckable="True" IsChecked="{Binding EnableToolBar,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-            </MenuItem>
-            <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.Game, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Height="22">
-                <MenuItem Header="MenuItem"/>
-            </MenuItem>
-            <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.Tools, Mode=OneWay, Source={x:Static service:ResourceService.Current}}" Foreground="{DynamicResource DarkMediumEmphasisTextColorBrush}" Height="22">
+            <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.Tools_NoKey, Mode=OneWay, Source={x:Static service:ResourceService.Current}}" Foreground="{DynamicResource DarkMediumEmphasisTextColorBrush}" Height="22">
                 <MenuItem Header="{Binding Resources.LogViewer, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}"
                          Command="{Binding OpenLogViewerCommand,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}">
                     <MenuItem.Icon>
@@ -147,46 +142,13 @@
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.Help, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Height="22">
+            <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.Help_NoKey, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Height="22">
                 <MenuItem Header="MenuItem"/>
             </MenuItem>
         </Menu>
 
         <Grid Margin="0,22,0,0" Background="{DynamicResource DarkSurfaceColor00dpBrush}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            
-            <ToolBar Height="32" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment, Height" Style="{DynamicResource CustomToolBarStyle}"
-                     Visibility="{Binding EnableToolBar,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource BoolToVisibilityConverter}}">
-                <Button Style="{DynamicResource CustomButtonWithImageStyle}" Background="{x:Null}">
-                    <Image Source="{Binding Resources.Icon_Save,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}" Stretch="UniformToFill"/>
-                </Button>
-                <Button Style="{DynamicResource CustomButtonWithImageStyle}">
-                    <Image Source="{Binding Resources.Icon_FolderOpen,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}"/>
-                </Button>
-                <Button Style="{DynamicResource CustomButtonWithImageStyle}">
-                    <Image Source="{Binding Resources.Icon_Library,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}"/>
-                </Button>
-                <Separator/>
-                <Button Style="{DynamicResource CustomButtonWithImageStyle}">
-                    <Image Source="{Binding Resources.Icon_Undo,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}"/>
-                </Button>
-                <Button Style="{DynamicResource CustomButtonWithImageStyle}">
-                    <Image Source="{Binding Resources.Icon_Redo,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}"/>
-                </Button>
-                <Separator/>
-                <Button Style="{DynamicResource CustomButtonWithImageStyle}">
-                    <Image Source="{Binding Resources.Icon_Play,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}"/>
-                </Button>
-                <Button Style="{DynamicResource CustomButtonWithImageStyle}">
-                    <Image Source="{Binding Resources.Icon_Stop,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}"/>
-                </Button>
-                <Button Style="{DynamicResource CustomButtonWithImageStyle}">
-                    <Image Source="{Binding Resources.Icon_Pause,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}"/>
-                </Button>
-            </ToolBar>
+
 
             <DockingManager x:Name="DockingMgr"
                            AllowMixedOrientation="True"
@@ -201,11 +163,11 @@
 
                 <DockingManager.LayoutItemTemplateSelector>
                     <panes:PanesTemplateSelector>
-                        <!--<panes:PanesTemplateSelector.AssetBrowserPaneTemplate>
+                        <panes:PanesTemplateSelector.StartPagePaneTemplate>
                             <DataTemplate>
-                                <ab:AssetBrowserControl/>
+                                <startpage:StartPageControl/>
                             </DataTemplate>
-                        </panes:PanesTemplateSelector.AssetBrowserPaneTemplate>-->
+                        </panes:PanesTemplateSelector.StartPagePaneTemplate>
                         <panes:PanesTemplateSelector.LogViewerPaneTemplate>
                             <DataTemplate>
                                 <logviewer:LogViewerControl/>
@@ -247,9 +209,7 @@
 
                 <LayoutRoot x:Name="_layoutRoot">
                     <LayoutPanel Orientation="Horizontal">
-                        <LayoutAnchorablePane Name="LeftPane" DockWidth="150"/>
-                        <LayoutDocumentPane x:Name="CenterDocument" />
-                        <LayoutAnchorablePane Name="RightPane" DockWidth="150"/>
+                        <LayoutDocumentPane x:Name="CenterDocument"/>
                     </LayoutPanel>
                 </LayoutRoot>
             </DockingManager>

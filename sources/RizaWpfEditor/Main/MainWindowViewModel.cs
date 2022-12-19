@@ -31,7 +31,7 @@ namespace RizaWpfEditor.Main
 
         public DockingWindowViewModel ActiveContent { get => _activeContent; set { _activeContent = value; NotifyPropertyChanged(); } }
 
-        public DelegateCommand OpenAssetBrowserCommand { get; set; }
+        public DelegateCommand OpenStartPageCommand { get; set; }
         public DelegateCommand OpenLogViewerCommand { get; set; }
 
         public MainWindowViewModel() : base()
@@ -49,18 +49,19 @@ namespace RizaWpfEditor.Main
             InitCommands();
 
             ResourceService.Current.ChangeCulture("en-US");
+            OpenStartPageCommand.Execute(null);
         }
 
         private void InitCommands()
         {
-            //  OpenAssetBrowserCommand = new DelegateCommand((object p) =>
-            //  {
-            //      OpenToolCommand<PanesTemplateSelector.AssetBrowserPaneViewModel>();
-            //  },
-            // (object p) =>
-            // {
-            //     return true;
-            // });
+            OpenStartPageCommand = new DelegateCommand((object p) =>
+            {
+                OpenToolCommand<PanesTemplateSelector.StartPagePaneViewModel>();
+            },
+           (object p) =>
+           {
+               return true;
+           });
 
             OpenLogViewerCommand = new DelegateCommand((object p) =>
              {

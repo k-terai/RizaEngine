@@ -23,7 +23,7 @@ namespace RizaWpfEditor.Panes
 
         }
 
-        public DataTemplate AssetBrowserPaneTemplate
+        public DataTemplate StartPagePaneTemplate
         {
             get;
             set;
@@ -34,6 +34,8 @@ namespace RizaWpfEditor.Panes
             get;
             set;
         }
+
+
 
         //public class AssetBrowserPaneViewModel : DockingWindowViewModel
         //{
@@ -48,6 +50,20 @@ namespace RizaWpfEditor.Panes
         //        IconSource = new Uri(Resources.icons8_book, UriKind.RelativeOrAbsolute);
         //    }
         //}
+
+        public class StartPagePaneViewModel : DockingWindowViewModel
+        {
+            public const string ID = "1D38BF69-2983-4B43-ABB2-993F7A9B9627";
+
+            public StartPagePaneViewModel() : base(DockingType.Document, DockingControlType.LogViewer)
+            {
+                Title = "Start Page";
+                Name = "Start Page";
+                ContentId = ID;
+                ToolTip = Resources.LogViewerToolTip;
+                IconSource = new Uri(Resources.Icon_View_Desktop, UriKind.RelativeOrAbsolute);
+            }
+        }
 
         public class LogViewerPaneViewModel : DockingWindowViewModel
         {
@@ -67,10 +83,10 @@ namespace RizaWpfEditor.Panes
         {
             var itemAsLayoutContent = item as LayoutContent;
 
-            //if (item is AssetBrowserPaneViewModel)
-            //{
-            //    return AssetBrowserPaneTemplate;
-            //}
+            if (item is StartPagePaneViewModel)
+            {
+                return StartPagePaneTemplate;
+            }
             if (item is LogViewerPaneViewModel)
             {
                 return LogViewerPaneTemplate;

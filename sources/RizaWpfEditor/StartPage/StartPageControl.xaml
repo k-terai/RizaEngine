@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="RizaWpfEditor.StartPage.StartPageControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:service="clr-namespace:RizaWpfEditor.Service" 
+             xmlns:command="clr-namespace:RizaWpfEditor.Commands" 
+             xmlns:converter="clr-namespace:RizaWpfEditor.Converters"
+             xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+             xmlns:local="clr-namespace:RizaWpfEditor.StartPage"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="{DynamicResource DarkSurfaceColor00dpBrush}">
+
+    <UserControl.Resources>
+        <converter:ActiveContentConverter x:Key="ActiveContentConverter"/>
+        <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <converter:StringToUriConverter x:Key="StringToUriConverter"/>
+        <sys:Boolean x:Key="TRUE">True</sys:Boolean>
+        <sys:Boolean x:Key="FALSE">False</sys:Boolean>
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <local:StartPageControlViewModel/>
+    </UserControl.DataContext>
+
+
+    <Grid Background="{DynamicResource DarkSurfaceColor00dpBrush}">
+        <Menu Background="{DynamicResource DarkSurfaceColor00dpBrush}" Foreground="{DynamicResource DarkMediumEmphasisTextColorBrush}" Height="22" d:LayoutOverrides="HorizontalAlignment" VerticalAlignment="Top">
+            <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.File, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Height="22">
+                <MenuItem Header="{Binding Resources.NewProject, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" InputGestureText="Ctrl+Shift+N"
+                         Command="{x:Static command:EditorCommand.OpenProjectWizardCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="{Binding Resources.Icon_Add_Project,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}" Stretch="UniformToFill"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="{Binding Resources.OpenProjectMenu, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" InputGestureText="Ctrl+Shift+O"
+                          Command="{x:Static command:EditorCommand.OpenProjectCommand}">
+
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.Edit, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Height="22">
+                <MenuItem Header="MenuItem"/>
+            </MenuItem>
+            <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.Display, Mode=OneWay, Source={x:Static service:ResourceService.Current}}" Foreground="{DynamicResource DarkMediumEmphasisTextColorBrush}" Height="22">
+                <MenuItem Header="Toggle Toolbar" Height="22" IsCheckable="True" IsChecked="{Binding EnableToolBar,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+            </MenuItem>
+            <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.Game, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Height="22">
+                <MenuItem Header="MenuItem"/>
+            </MenuItem>
+            <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.Tools, Mode=OneWay, Source={x:Static service:ResourceService.Current}}" Foreground="{DynamicResource DarkMediumEmphasisTextColorBrush}" Height="22">
+                <MenuItem Header="{Binding Resources.LogViewer, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}"
+                         Command="{Binding OpenLogViewerCommand,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}">
+                    <MenuItem.Icon>
+                        <Image Source="{Binding Resources.Icon_View_Desktop,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}" Stretch="UniformToFill"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Style="{DynamicResource CustomMenuItemStyle}" Header="{Binding Resources.Help, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Height="22">
+                <MenuItem Header="MenuItem"/>
+            </MenuItem>
+        </Menu>
+
+        <Grid Margin="-6,22,6,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <ToolBar Height="32" VerticalAlignment="Center" d:LayoutOverrides="HorizontalAlignment, Height" Style="{DynamicResource CustomToolBarStyle}"
+                     Visibility="{Binding EnableToolBar,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource BoolToVisibilityConverter}}" Margin="6,0,-6,0">
+                <Button Style="{DynamicResource CustomButtonWithImageStyle}" Background="{x:Null}">
+                    <Image Source="{Binding Resources.Icon_Save,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}" Stretch="UniformToFill"/>
+                </Button>
+                <Button Style="{DynamicResource CustomButtonWithImageStyle}">
+                    <Image Source="{Binding Resources.Icon_FolderOpen,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}"/>
+                </Button>
+                <Button Style="{DynamicResource CustomButtonWithImageStyle}">
+                    <Image Source="{Binding Resources.Icon_Library,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}"/>
+                </Button>
+                <Separator/>
+                <Button Style="{DynamicResource CustomButtonWithImageStyle}">
+                    <Image Source="{Binding Resources.Icon_Undo,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}"/>
+                </Button>
+                <Button Style="{DynamicResource CustomButtonWithImageStyle}">
+                    <Image Source="{Binding Resources.Icon_Redo,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}"/>
+                </Button>
+                <Separator/>
+                <Button Style="{DynamicResource CustomButtonWithImageStyle}">
+                    <Image Source="{Binding Resources.Icon_Play,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}"/>
+                </Button>
+                <Button Style="{DynamicResource CustomButtonWithImageStyle}">
+                    <Image Source="{Binding Resources.Icon_Stop,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}"/>
+                </Button>
+                <Button Style="{DynamicResource CustomButtonWithImageStyle}">
+                    <Image Source="{Binding Resources.Icon_Pause,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}"/>
+                </Button>
+            </ToolBar>
+            <DataGrid  Background="#FFAB0000" RenderTransformOrigin="0.5,0.5" Grid.Row="1" Margin="0,0,-6,0"/>
+        </Grid>
+    </Grid>
+</UserControl>

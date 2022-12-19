@@ -106,6 +106,15 @@ namespace RizaWpfEditor {
         }
         
         /// <summary>
+        ///   File に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string File_NoKey {
+            get {
+                return ResourceManager.GetString("File_NoKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Game(_G) に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Game {
@@ -115,11 +124,29 @@ namespace RizaWpfEditor {
         }
         
         /// <summary>
+        ///   Game に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Game_NoKey {
+            get {
+                return ResourceManager.GetString("Game_NoKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Help(_H) に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Help {
             get {
                 return ResourceManager.GetString("Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Help に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Help_NoKey {
+            get {
+                return ResourceManager.GetString("Help_NoKey", resourceCulture);
             }
         }
         
@@ -376,6 +403,15 @@ namespace RizaWpfEditor {
         }
         
         /// <summary>
+        ///   StartPage is entry point to launch all editor tools and engine. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string StartPageToolTip {
+            get {
+                return ResourceManager.GetString("StartPageToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Template に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Template {
@@ -390,6 +426,15 @@ namespace RizaWpfEditor {
         public static string Tools {
             get {
                 return ResourceManager.GetString("Tools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Tools に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Tools_NoKey {
+            get {
+                return ResourceManager.GetString("Tools_NoKey", resourceCulture);
             }
         }
     }

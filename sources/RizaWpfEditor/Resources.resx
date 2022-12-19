@@ -132,11 +132,20 @@
   <data name="File" xml:space="preserve">
     <value>File(_F)</value>
   </data>
+  <data name="File_NoKey" xml:space="preserve">
+    <value>File</value>
+  </data>
   <data name="Game" xml:space="preserve">
     <value>Game(_G)</value>
   </data>
+  <data name="Game_NoKey" xml:space="preserve">
+    <value>Game</value>
+  </data>
   <data name="Help" xml:space="preserve">
     <value>Help(_H)</value>
+  </data>
+  <data name="Help_NoKey" xml:space="preserve">
+    <value>Help</value>
   </data>
   <data name="Icon-Add-Project" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_album_add_128_filled.png</value>
@@ -222,10 +231,16 @@
   <data name="SelectLocation" xml:space="preserve">
     <value>Select Location</value>
   </data>
+  <data name="StartPageToolTip" xml:space="preserve">
+    <value>StartPage is entry point to launch all editor tools and engine.</value>
+  </data>
   <data name="Template" xml:space="preserve">
     <value>Template</value>
   </data>
   <data name="Tools" xml:space="preserve">
     <value>Tools(_T)</value>
+  </data>
+  <data name="Tools_NoKey" xml:space="preserve">
+    <value>Tools</value>
   </data>
 </root>
