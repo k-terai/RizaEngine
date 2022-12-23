@@ -7,6 +7,8 @@
 using namespace std;
 using namespace RizaEngine;
 
+LogCallback Logger::s_callback;
+
 void Logger::Log(LogType type, ctstring fmt, ...)
 {
 	va_list args;
