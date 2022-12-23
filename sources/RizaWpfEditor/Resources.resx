@@ -123,6 +123,9 @@
   <data name="Create" xml:space="preserve">
     <value>Create</value>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
   <data name="Display" xml:space="preserve">
     <value>Display(_D)</value>
   </data>
@@ -206,6 +209,9 @@
   </data>
   <data name="Icon_Warning" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_warning_128_filled.png</value>
+  </data>
+  <data name="Launch" xml:space="preserve">
+    <value>Launch</value>
   </data>
   <data name="Location" xml:space="preserve">
     <value>Location</value>

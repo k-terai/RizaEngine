@@ -94,7 +94,23 @@
                     <Image Source="{Binding Resources.Icon_Pause,Converter={StaticResource StringToUriConverter},Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Opacity="{DynamicResource DarkImageOpacity}"/>
                 </Button>
             </ToolBar>
-            <DataGrid  Background="#FFAB0000" RenderTransformOrigin="0.5,0.5" Grid.Row="1" Margin="0,0,-6,0"/>
+            <DataGrid  Background="{DynamicResource DarkSurfaceColor00dpBrush}" RenderTransformOrigin="0.5,0.5" Grid.Row="1" Margin="0,0,-6,0" ItemsSource="{Binding Tools,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" CanUserSortColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="{Binding Resources.Launch, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button>
+                                    <StackPanel Orientation="Vertical">
+                                        <Image Source="{Binding ImageUri,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                        <TextBlock Text="{Binding Name,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                    </StackPanel>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="{Binding Resources.Description, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Binding="{Binding ToolTip,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" />
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
     </Grid>
 </UserControl>

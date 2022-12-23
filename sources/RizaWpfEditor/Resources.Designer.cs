@@ -79,6 +79,15 @@ namespace RizaWpfEditor {
         }
         
         /// <summary>
+        ///   Description に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Display(_D) に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Display {
@@ -327,6 +336,15 @@ namespace RizaWpfEditor {
         public static string Icon_Warning {
             get {
                 return ResourceManager.GetString("Icon_Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Launch に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Launch {
+            get {
+                return ResourceManager.GetString("Launch", resourceCulture);
             }
         }
         
