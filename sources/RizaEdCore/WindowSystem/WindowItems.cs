@@ -39,4 +39,20 @@ namespace RizaEdCore.WindowSystem
 
     }
 
+    public class DataGridToolViewModel : WindowItemViewModel
+    {
+        private DelegateCommand _clickCommand;
+        private string _toolTip;
+
+        public DelegateCommand ClickCommand
+        {
+            get => _clickCommand; 
+            set
+            {
+                _clickCommand = value; NotifyPropertyChanged();
+            }
+        }
+        public string ToolTip { get => _toolTip; set { _toolTip = value; NotifyPropertyChanged(); } }
+    }
+
 }
