@@ -5,5 +5,6 @@
 #define PCH_H
 
 #include "RizaD3D12Render.h"
+#include"d3d12common.h"
 
 #endif //PCH_H

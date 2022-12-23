@@ -4,6 +4,7 @@
 #pragma once
 #include"IRenderModule.h"
 #include"FrameworkGlobalEnvironment.h"
+#include"SceneRendererManager.h"
 
 namespace RizaEngine
 {
@@ -15,5 +16,8 @@ namespace RizaEngine
 		virtual void Startup() override;
 		virtual void Update() override;
 		virtual void Terminate() override;
+
+	private:
+		SceneRendererManager m_sceneRendererMgr;
 	};
 }

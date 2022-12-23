@@ -156,9 +156,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Inc\RizaD3D12Render.h" />
+    <ClInclude Include="Src\d3d12common.h" />
     <ClInclude Include="Src\d3dx12.h" />
     <ClInclude Include="Src\pch.h" />
     <ClInclude Include="Src\RenderModule.h" />
+    <ClInclude Include="Src\SceneRendererManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\pch.cpp">
@@ -169,6 +171,7 @@
     </ClCompile>
     <ClCompile Include="Src\RenderModule.cpp" />
     <ClCompile Include="Src\RizaD3D12Render.cpp" />
+    <ClCompile Include="Src\SceneRendererManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RizaEnCore\RizaEnCore.vcxproj">
