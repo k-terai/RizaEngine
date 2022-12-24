@@ -214,6 +214,15 @@ namespace RizaWpfEditor {
         }
         
         /// <summary>
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_eye_tracking_on_128_filled.png に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Icon_Eye_Tracking {
+            get {
+                return ResourceManager.GetString("Icon_Eye_Tracking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   /RizaWpfEditor;component/Icons/ic_fluent_folder_open_128_filled.png に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Icon_FolderOpen {
@@ -372,6 +381,24 @@ namespace RizaWpfEditor {
         public static string LogViewerToolTip {
             get {
                 return ResourceManager.GetString("LogViewerToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Look Dev に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string LookDev {
+            get {
+                return ResourceManager.GetString("LookDev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Look Dev is a visual tool that allows you to validate how different assets look in different lighting environments on the engine. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string LookDevToolTip {
+            get {
+                return ResourceManager.GetString("LookDevToolTip", resourceCulture);
             }
         }
         

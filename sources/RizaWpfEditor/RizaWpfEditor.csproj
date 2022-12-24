@@ -37,6 +37,7 @@
     <None Remove="Icons\ic_fluent_broom_128_filled.png" />
     <None Remove="Icons\ic_fluent_dismiss_24_filled.png" />
     <None Remove="Icons\ic_fluent_error_circle_128_filled.png" />
+    <None Remove="Icons\ic_fluent_eye_tracking_on_128_filled.png" />
     <None Remove="Icons\ic_fluent_folder_open_128_filled.png" />
     <None Remove="Icons\ic_fluent_full_screen_maximize_24_regular.png" />
     <None Remove="Icons\ic_fluent_full_screen_minimize_24_regular.png" />
@@ -65,6 +66,7 @@
     <Resource Include="Icons\ic_fluent_broom_128_filled.png" />
     <Resource Include="Icons\ic_fluent_dismiss_24_filled.png" />
     <Resource Include="Icons\ic_fluent_error_circle_128_filled.png" />
+    <Resource Include="Icons\ic_fluent_eye_tracking_on_128_filled.png" />
     <Resource Include="Icons\ic_fluent_folder_open_128_filled.png" />
     <Resource Include="Icons\ic_fluent_full_screen_maximize_24_regular.png" />
     <Resource Include="Icons\ic_fluent_full_screen_minimize_24_regular.png" />

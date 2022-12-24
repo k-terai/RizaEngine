@@ -27,6 +27,12 @@ namespace RizaWpfEditor.StartPage
                     Name = Resources.LogViewer,
                     ImageUri = new Uri(Resources.Icon_View_Desktop, UriKind.RelativeOrAbsolute),
                     ToolTip = Resources.LogViewerToolTip
+                },
+                new DataGridToolViewModel()
+                {
+                    Name = Resources.LookDev,
+                    ImageUri = new Uri(Resources.Icon_Eye_Tracking, UriKind.RelativeOrAbsolute),
+                    ToolTip = Resources.LookDevToolTip
                 }
             };
 
