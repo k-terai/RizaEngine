@@ -158,11 +158,15 @@
     <ClInclude Include="Inc\RizaD3D12Render.h" />
     <ClInclude Include="Src\d3d12common.h" />
     <ClInclude Include="Src\d3dx12.h" />
+    <ClInclude Include="Src\ForwardSceneRenderer.h" />
     <ClInclude Include="Src\pch.h" />
     <ClInclude Include="Src\RenderModule.h" />
+    <ClInclude Include="Src\SceneRenderer.h" />
     <ClInclude Include="Src\SceneRendererManager.h" />
+    <ClInclude Include="Src\WindowsUtility.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\ForwardSceneRenderer.cpp" />
     <ClCompile Include="Src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -171,6 +175,7 @@
     </ClCompile>
     <ClCompile Include="Src\RenderModule.cpp" />
     <ClCompile Include="Src\RizaD3D12Render.cpp" />
+    <ClCompile Include="Src\SceneRenderer.cpp" />
     <ClCompile Include="Src\SceneRendererManager.cpp" />
   </ItemGroup>
   <ItemGroup>

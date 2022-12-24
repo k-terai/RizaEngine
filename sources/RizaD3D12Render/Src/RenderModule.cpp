@@ -14,19 +14,20 @@ RenderModule::~RenderModule()
 void RenderModule::Initialize(FrameworkGlobalEnvironment* const fge)
 {
 	fge->pRenderModule = this;
+	m_sceneRendererMgr.Initialize();
 }
 
 void RenderModule::Startup()
 {
-	
+
 }
 
 void RenderModule::Update()
 {
-	
+
 }
 
 void RizaEngine::RenderModule::Terminate()
 {
-	
+
 }

@@ -25,4 +25,6 @@ namespace RizaEngine
 	typedef signed int int32;
 	typedef unsigned long long uint64;
 	typedef signed long long int64;
+	typedef HWND whandle;
+	typedef RECT wrect;
 }

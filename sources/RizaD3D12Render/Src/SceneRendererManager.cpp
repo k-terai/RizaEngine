@@ -27,6 +27,29 @@ SceneRendererManager::~SceneRendererManager()
 	m_device = nullptr;
 }
 
+bool RizaEngine::SceneRendererManager::Initialize()
+{
+	CHRESULT result = EnableDebugLayer();
+	if (result != S_OK)
+	{
+		return false;
+	}
+
+	result = CreateFactory();
+	if (result != S_OK)
+	{
+		return false;
+	}
+
+	result = CreateDevice();
+	if (result != S_OK)
+	{
+		return false;
+	}
+
+	return true;
+}
+
 CHRESULT RizaEngine::SceneRendererManager::EnableDebugLayer()
 {
 #if defined(_DEBUG)

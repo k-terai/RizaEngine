@@ -14,6 +14,8 @@ namespace RizaEngine
 		SceneRendererManager();
 		virtual ~SceneRendererManager() override;
 
+		bool Initialize();
+
 	private:
 		CHRESULT EnableDebugLayer();
 		CHRESULT CreateFactory();
