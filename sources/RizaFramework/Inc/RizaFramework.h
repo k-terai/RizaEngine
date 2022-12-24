@@ -4,6 +4,7 @@
 #pragma once
 #include"NonCopyable.h"
 #include"FrameworkGlobalEnvironment.h"
+#include"IRenderModule.h"
 
 namespace RizaEngine
 {
@@ -20,12 +21,17 @@ namespace RizaEngine
 		void Update();
 		void Terminate();
 
+		inline IRenderModule* const GetRenderModule()
+		{
+			return m_globalEnvironment.pRenderModule;
+		}
+
 	private:
 		RizaFramework();
 		virtual ~RizaFramework() override;
 
 	private:
-		static RizaFramework s_instance; //Thread safe
+		static RizaFramework s_instance; //Thread safe.
 		FrameworkGlobalEnvironment m_globalEnvironment;
 	};
 }

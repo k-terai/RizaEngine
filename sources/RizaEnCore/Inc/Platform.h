@@ -3,7 +3,15 @@
 
 #pragma once
 
-#if _WIN32 | _WIN64
+#if _WIN32 | _WIN64 | WINAPI_FAMILY
+#define _RIZA_ENGINE_PLATFORM_WINDOWS 1
+#endif
+
+#if _XBOX_ONE | _GAMING_XBOX
+#define _RIZA_ENGINE_PLATFORM_XBOX 1
+#endif
+
+#if _RIZA_ENGINE_PLATFORM_WINDOWS 
 #define WIN32_LEAN_AND_MEAN       
 #include<Windows.h> //Windows only
 #endif
@@ -13,6 +21,7 @@
 
 namespace RizaEngine
 {
+#if _RIZA_ENGINE_PLATFORM_WINDOWS 
 	typedef TCHAR tchar;
 	typedef std::basic_string<TCHAR> tstring;  //Auto convert string (unicode,multi byte)
 	typedef LPTSTR ptstring;    // Pointer string.
@@ -27,4 +36,6 @@ namespace RizaEngine
 	typedef signed long long int64;
 	typedef HWND whandle;
 	typedef RECT wrect;
+#endif
+
 }

@@ -10,5 +10,10 @@ namespace RizaEngine
 	{
 	public:
 		virtual ~IRenderModule() = default;
+
+#if _RIZA_ENGINE_PLATFORM_WINDOWS
+		virtual void CreateForwardSceneRender(const whandle hwnd) = 0;
+#endif
+
 	};
 }

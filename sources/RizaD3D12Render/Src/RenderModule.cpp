@@ -31,3 +31,8 @@ void RizaEngine::RenderModule::Terminate()
 {
 
 }
+
+void RenderModule::CreateForwardSceneRender(const whandle hwnd)
+{
+	m_sceneRendererMgr.CreateForwardSceneRenderer(hwnd);
+}

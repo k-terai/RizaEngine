@@ -3,6 +3,7 @@
 
 #include "pch.h"
 #include "SceneRendererManager.h"
+#include "ForwardSceneRenderer.h"
 #include"Logger.h"
 
 using namespace std;
@@ -25,6 +26,12 @@ SceneRendererManager::~SceneRendererManager()
 
 	m_device.Reset();
 	m_device = nullptr;
+
+	for (auto& r : m_sceneRenderers)
+	{
+		r.reset();
+	}
+	m_sceneRenderers.clear();
 }
 
 bool RizaEngine::SceneRendererManager::Initialize()
@@ -46,8 +53,17 @@ bool RizaEngine::SceneRendererManager::Initialize()
 	{
 		return false;
 	}
-
+	m_sceneRenderers.reserve(8);
 	return true;
+}
+
+bool RizaEngine::SceneRendererManager::CreateForwardSceneRenderer(const whandle hwnd)
+{
+	m_sceneRenderers.emplace_back(make_unique<ForwardSceneRenderer>());
+	ForwardSceneRenderer* const ptr = reinterpret_cast<ForwardSceneRenderer*>(m_sceneRenderers.back().get());
+	CHRESULT result = ptr->Initialize(m_device.Get(), m_factory.Get(), hwnd);
+
+	return result == S_OK;
 }
 
 CHRESULT RizaEngine::SceneRendererManager::EnableDebugLayer()

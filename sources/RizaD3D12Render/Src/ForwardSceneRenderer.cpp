@@ -54,10 +54,10 @@ CHRESULT RizaEngine::ForwardSceneRenderer::InitSwapChain(const whandle hwnd)
 {
 	wrect rect = GetRect(hwnd);
 	m_windowWidth = rect.right + rect.left;
-	m_windowWidth = rect.bottom + -rect.top;
+	m_windowWidth = rect.bottom + rect.top;
 
 	DXGI_SWAP_CHAIN_DESC1 swapChainDesc;
-	SecureZeroMemory(&swapChainDesc, sizeof(DXGI_SWAP_CHAIN_DESC));
+	SecureZeroMemory(&swapChainDesc, sizeof(DXGI_SWAP_CHAIN_DESC1));
 	swapChainDesc.BufferCount = m_frameCount;
 	swapChainDesc.Width = m_windowWidth;
 	swapChainDesc.Height = m_windowHeight;

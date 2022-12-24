@@ -17,6 +17,8 @@ namespace RizaEngine
 		virtual void Update() override;
 		virtual void Terminate() override;
 
+		virtual void CreateForwardSceneRender(const whandle hwnd) override;
+
 	private:
 		SceneRendererManager m_sceneRendererMgr;
 	};

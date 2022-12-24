@@ -5,6 +5,10 @@
 #include"NonCopyable.h"
 #include"d3d12common.h"
 #include"Platform.h"
+#include"SceneRenderer.h"
+
+#include<vector>
+#include<memory>
 
 namespace RizaEngine
 {
@@ -15,6 +19,7 @@ namespace RizaEngine
 		virtual ~SceneRendererManager() override;
 
 		bool Initialize();
+		bool CreateForwardSceneRenderer(const whandle hwnd);
 
 	private:
 		CHRESULT EnableDebugLayer();
@@ -25,6 +30,7 @@ namespace RizaEngine
 
 
 	private:
+		std::vector<std::unique_ptr<SceneRenderer>> m_sceneRenderers;
 		uint32 m_dxgiFactoryFlags;
 		bool m_useWarpDevice;
 		ComPtr<CID3D12Debug> m_debugController;

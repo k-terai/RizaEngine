@@ -74,6 +74,7 @@ int Run(HINSTANCE hInstance, int nCmdShow)
 
 	ShowWindow(hwnd, nCmdShow);
 	ptr->Startup();
+	ptr->GetRenderModule()->CreateForwardSceneRender(hwnd);
 
 	MSG msg = {};
 	while (msg.message != WM_QUIT)

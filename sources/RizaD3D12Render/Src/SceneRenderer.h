@@ -11,8 +11,6 @@ namespace RizaEngine
 	{
 	public:
 		virtual void Render() = 0;
-
-	protected:
 		SceneRenderer();
 		virtual ~SceneRenderer() override;
 
