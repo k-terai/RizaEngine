@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AssetBrowser" xml:space="preserve">
+    <value>アセットブラウザー</value>
+  </data>
+  <data name="AssetBrowserToolTip" xml:space="preserve">
+    <value>アセットブラウザはプロジェクトでアセットを作成、インポート、整理、表示、編集するためのツールです。</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>キャンセル</value>
   </data>

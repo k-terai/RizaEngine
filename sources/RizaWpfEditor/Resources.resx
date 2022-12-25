@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AssetBrowser" xml:space="preserve">
+    <value>Asset Browser</value>
+  </data>
+  <data name="AssetBrowserToolTip" xml:space="preserve">
+    <value>The Asset Browser is a tool for creating, importing, organizing, viewing and editing assets in your project.</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>

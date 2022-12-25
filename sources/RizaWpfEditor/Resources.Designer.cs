@@ -61,6 +61,24 @@ namespace RizaWpfEditor {
         }
         
         /// <summary>
+        ///   Asset Browser に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string AssetBrowser {
+            get {
+                return ResourceManager.GetString("AssetBrowser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   The Asset Browser is a tool for creating, importing, organizing, viewing and editing assets in your project. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string AssetBrowserToolTip {
+            get {
+                return ResourceManager.GetString("AssetBrowserToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cancel に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Cancel {
