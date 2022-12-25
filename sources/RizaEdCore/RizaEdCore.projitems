@@ -9,6 +9,13 @@
     <Import_RootNamespace>RizaEdCore</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AssetSystem\Asset.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AssetSystem\AssetDatabase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AssetSystem\Contexts\AssetContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AssetSystem\Data\AssetMetaData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AssetSystem\Folders\NormalFolder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AssetSystem\Folders\Root\RootFolder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AssetSystem\Texture\Texture.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ControlSystem\ControlViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ControlSystem\IControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreSystem\DelegateCommand.cs" />
@@ -30,6 +37,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\JsonSerializer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\SerializeAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Serializercs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TreeSystem\Assets\AssetTreeComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TreeSystem\TreeComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WindowSystem\DockingWindowViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WindowSystem\IWindow.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WindowSystem\TabViewModel.cs" />
