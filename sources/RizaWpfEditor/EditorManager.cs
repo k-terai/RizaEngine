@@ -2,6 +2,7 @@
 // Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
 
 using RizaEdCore.ProjectSystem;
+using RizaWpfEditor.Main;
 using RizaWpfEditor.ProjectWizard;
 using RizaWpfEditor.Utilities;
 using System;
@@ -20,6 +21,14 @@ namespace RizaWpfEditor
     public static class EditorManager
     {
         public const string MAIN_WINDOW_URI_PATH = "Main/MainWindow.xaml";
+
+        public static IMainWindow MainWindow
+        {
+            get
+            {
+                return Application.Current.MainWindow as IMainWindow;
+            }
+        }
 
         /// <summary>
         /// Editor startup.

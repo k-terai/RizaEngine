@@ -16,6 +16,7 @@ namespace RizaWpfEditor.Main
 {
     public interface IMainWindow : IWindow
     {
+        MainWindowViewModel ViewModel { get; }
 
 #if WPF
         void SetState(WindowState state);

@@ -44,7 +44,7 @@ namespace RizaWpfEditor.StartPage
                     ToolTip = Resources.LogViewerToolTip,
                     ClickCommand = new DelegateCommand((object p) =>
                     {
-
+                        EditorManager.MainWindow.ViewModel.OpenLogViewerCommand.SafeExecute(null);
                     },
                     (object p) =>
                     {

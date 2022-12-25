@@ -69,10 +69,10 @@ namespace RizaWpfEditor.Panes
         {
             public const string ID = "CF09E818-618B-45DE-93FE-B8F646F2CB03";
 
-            public LogViewerPaneViewModel() : base(DockingType.Anchorable, DockingControlType.LogViewer)
+            public LogViewerPaneViewModel() : base(DockingType.Document, DockingControlType.LogViewer)
             {
-                Title = "LogViewer";
-                Name = "Log Viewer";
+                Title = Resources.LogViewer;
+                Name = Resources.LogViewer;
                 ContentId = ID;
                 ToolTip = Resources.LogViewerToolTip;
                 IconSource = new Uri(Resources.Icon_View_Desktop, UriKind.RelativeOrAbsolute);
