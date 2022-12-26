@@ -18,6 +18,11 @@ namespace RizaEngine
 	typedef ID3D12Device CID3D12Device;
 	typedef IDXGISwapChain1 CIDXGISwapChain;
 	typedef ID3D12CommandQueue CID3D12CommandQueue;
+	typedef ID3D12DescriptorHeap CID3D12DescriptorHeap;
+	typedef ID3D12Resource CID3D12Resource;
+	typedef ID3D12CommandAllocator CID3D12CommandAllocator;
+	typedef ID3D12GraphicsCommandList CID3D12GraphicsCommandList;
+	typedef ID3D12Fence CID3D12Fence;
 
 	typedef HRESULT CHRESULT;
 }

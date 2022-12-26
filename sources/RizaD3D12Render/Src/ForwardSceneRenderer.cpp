@@ -17,23 +17,75 @@ ForwardSceneRenderer::ForwardSceneRenderer()
 
 ForwardSceneRenderer::~ForwardSceneRenderer()
 {
+	m_fence.Reset();
+	m_graphicsContext.reset();
+	m_commandList.Reset();
+	m_commandAllocator.Reset();
+	m_swapChain.Reset();
+	m_commandQueue.Reset();
+	m_rtvHeap.Reset();
 
-}
+	for (auto& r : m_renderTargets)
+	{
+		r.Reset();
+	}
+	m_renderTargets.clear();
 
-void ForwardSceneRenderer::Render()
-{
+	m_fence = nullptr;
+	m_graphicsContext = nullptr;
+	m_commandAllocator = nullptr;
+	m_commandList = nullptr;
+	m_swapChain = nullptr;
+	m_commandQueue = nullptr;
+	m_rtvHeap = nullptr;
 	m_device = nullptr;
 	m_factory = nullptr;
 	m_windowHeight = 0;
 	m_windowWidth = 0;
 }
 
+void ForwardSceneRenderer::Render()
+{
+
+}
+
 CHRESULT RizaEngine::ForwardSceneRenderer::Initialize(CID3D12Device* const device, CIDXGIFactory* const factory, const whandle hwnd)
 {
+	m_graphicsContext = std::make_unique<GraphicsContext>(D3D12_COMMAND_LIST_TYPE_DIRECT);
 	m_device = device;
 	m_factory = factory;
-	InitCommandQueue();
-	InitSwapChain(hwnd);
+
+	if (FAILED(InitCommandQueue()))
+	{
+		return S_FALSE;
+	}
+
+	if (FAILED(InitSwapChain(hwnd)))
+	{
+		return S_FALSE;
+	}
+
+	if (FAILED(CreateRenderTarget()))
+	{
+		return S_FALSE;
+	}
+
+	if (FAILED(CreateCommandAllocator()))
+	{
+		return S_FALSE;
+	}
+
+
+	if (FAILED(CreateCommandList()))
+	{
+		return S_FALSE;
+	}
+
+
+	if (FAILED(CreateFence()))
+	{
+		return S_FALSE;
+	}
 
 	return S_OK;
 }
@@ -76,5 +128,92 @@ CHRESULT RizaEngine::ForwardSceneRenderer::InitSwapChain(const whandle hwnd)
 	);
 
 	Logger::IsFailureLog(result);
+
+	result = m_factory->MakeWindowAssociation(hwnd, DXGI_MWA_NO_ALT_ENTER);
+	Logger::IsFailureLog(result);
+
+	return result;
+}
+
+CHRESULT RizaEngine::ForwardSceneRenderer::CreateRenderTarget()
+{
+	CHRESULT result;
+
+	// Create descriptor heaps.
+	{
+		D3D12_DESCRIPTOR_HEAP_DESC rtvHeapDesc = {};
+		SecureZeroMemory(&rtvHeapDesc, sizeof(D3D12_DESCRIPTOR_HEAP_DESC));
+		rtvHeapDesc.NumDescriptors = m_frameCount;
+		rtvHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_RTV;
+		rtvHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_NONE;
+		result = m_device->CreateDescriptorHeap(&rtvHeapDesc, IID_PPV_ARGS(&m_rtvHeap));
+		if (Logger::IsFailureLog(result) == false)
+		{
+			return result;
+		}
+		m_rtvDescriptorSize = m_device->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_RTV);
+	}
+
+	// Create frame resources.
+	{
+		CD3DX12_CPU_DESCRIPTOR_HANDLE rtvHandle(m_rtvHeap->GetCPUDescriptorHandleForHeapStart());
+
+		m_renderTargets.resize(m_frameCount);
+
+		// Create a RTV for each frame.
+		for (uint32 n = 0; n < m_frameCount; n++)
+		{
+			result = m_swapChain->GetBuffer(n, IID_PPV_ARGS(&m_renderTargets[n]));
+			if (Logger::IsFailureLog(result) == false)
+			{
+				return result;
+			}
+
+			m_device->CreateRenderTargetView(m_renderTargets[n].Get(), nullptr, rtvHandle);
+			rtvHandle.Offset(1, m_rtvDescriptorSize);
+		}
+	}
+
+	return result;
+
+}
+
+CHRESULT RizaEngine::ForwardSceneRenderer::CreateCommandAllocator()
+{
+	CHRESULT result = m_device->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, IID_PPV_ARGS(&m_commandAllocator));
+
+	if (Logger::IsFailureLog(result) == false)
+	{
+		m_graphicsContext->SetCommandAllocaator(m_commandAllocator.Get());
+	}
+	return result;
+}
+
+CHRESULT RizaEngine::ForwardSceneRenderer::CreateCommandList()
+{
+	CHRESULT result = m_device->CreateCommandList(0, D3D12_COMMAND_LIST_TYPE_DIRECT, m_commandAllocator.Get(), nullptr, IID_PPV_ARGS(&m_commandList));
+
+	if (Logger::IsFailureLog(result) == false)
+	{
+		m_graphicsContext->SetGraphicsCommandList(m_commandList.Get());
+	}
+	return result;
+}
+
+CHRESULT ForwardSceneRenderer::CreateFence()
+{
+	CHRESULT result = m_device->CreateFence(0, D3D12_FENCE_FLAG_NONE, IID_PPV_ARGS(&m_fence));
+	if (Logger::IsFailureLog(result))
+	{
+		return result;
+	}
+
+	m_fenceValue = 1;
+	m_fenceEvent = CreateEvent(nullptr, FALSE, FALSE, nullptr);
+	if (m_fenceEvent == nullptr)
+	{
+		return S_FALSE;
+	}
+
 	return result;
 }

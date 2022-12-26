@@ -35,6 +35,7 @@ namespace RizaEngine
 	typedef unsigned long long uint64;
 	typedef signed long long int64;
 	typedef HWND whandle;
+	typedef HANDLE handle;
 	typedef RECT wrect;
 #endif
 
