@@ -1,6 +1,8 @@
 ﻿// Copyright (c) k-terai and Contributors
 // Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
 
+using RizaEdCore.AssetSystem;
+using RizaEdCore.AssetSystem.Folders.Root;
 using RizaEdCore.ProjectSystem;
 using RizaWpfEditor.Main;
 using RizaWpfEditor.ProjectWizard;
@@ -43,6 +45,20 @@ namespace RizaWpfEditor
             };
 
             if (Project.Load(projectpath) == null)
+            {
+                return false;
+            }
+
+            if (!AssetDatabase.Startup())
+            {
+                return false;
+            }
+
+            AssetDatabase.RegisterIconUrl<RootFolder>(new Uri(Resources.Icon_Library, UriKind.RelativeOrAbsolute));
+            AssetDatabase.RegisterIconUrl<NormalFolder>(new Uri(Resources.Icon_Folder, UriKind.RelativeOrAbsolute));
+            AssetDatabase.RegisterIconUrl<Texture>(new Uri(Resources.Icon_Image, UriKind.RelativeOrAbsolute));
+
+            if (!AssetDatabase.Initialize())
             {
                 return false;
             }

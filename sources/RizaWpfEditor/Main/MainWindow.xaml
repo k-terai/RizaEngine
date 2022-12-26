@@ -12,6 +12,7 @@
         xmlns:converter="clr-namespace:RizaWpfEditor.Converters"
         xmlns:panes="clr-namespace:RizaWpfEditor.Panes"
         xmlns:logviewer="clr-namespace:RizaWpfEditor.LogViewer"
+        xmlns:assetbrowser="clr-namespace:RizaWpfEditor.AssetBrowser"
         xmlns:startpage="clr-namespace:RizaWpfEditor.StartPage"
         xmlns:layout="clr-namespace:RizaWpfEditor.Layout"
         mc:Ignorable="d"
@@ -173,6 +174,11 @@
                                 <logviewer:LogViewerControl/>
                             </DataTemplate>
                         </panes:PanesTemplateSelector.LogViewerPaneTemplate>
+                        <panes:PanesTemplateSelector.AssetBrowserPaneTemplate>
+                            <DataTemplate>
+                                <assetbrowser:AssetBrowserControl/>
+                            </DataTemplate>
+                        </panes:PanesTemplateSelector.AssetBrowserPaneTemplate>
                     </panes:PanesTemplateSelector>
                 </DockingManager.LayoutItemTemplateSelector>
 

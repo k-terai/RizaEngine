@@ -30,7 +30,7 @@ namespace RizaWpfEditor.StartPage
                     ToolTip = Resources.AssetBrowserToolTip,
                     ClickCommand = new DelegateCommand((object p) =>
                     {
-
+                          EditorManager.MainWindow.ViewModel.OpenAssetBrowserCommand.SafeExecute(null);
                     },
                     (object p) =>
                     {

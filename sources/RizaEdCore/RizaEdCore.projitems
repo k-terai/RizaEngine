@@ -11,6 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)AssetSystem\Asset.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AssetSystem\AssetDatabase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AssetSystem\AssetViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AssetSystem\Contexts\AssetContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AssetSystem\Data\AssetMetaData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AssetSystem\Folders\NormalFolder.cs" />

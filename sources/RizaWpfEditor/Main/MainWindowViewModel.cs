@@ -34,6 +34,8 @@ namespace RizaWpfEditor.Main
         public DelegateCommand OpenStartPageCommand { get; set; }
         public DelegateCommand OpenLogViewerCommand { get; set; }
 
+        public DelegateCommand OpenAssetBrowserCommand { get; set; }
+
         public MainWindowViewModel() : base()
         {
             EnableToolBar = true;
@@ -71,6 +73,15 @@ namespace RizaWpfEditor.Main
            {
                return true;
            });
+
+            OpenAssetBrowserCommand = new DelegateCommand((object p) =>
+            {
+                OpenToolCommand<PanesTemplateSelector.AssetBrowserPaneViewModel>();
+            },
+          (object p) =>
+          {
+              return true;
+          });
         }
 
         private void OpenToolCommand<T>()

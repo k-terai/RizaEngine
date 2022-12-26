@@ -35,27 +35,33 @@ namespace RizaWpfEditor.Panes
             set;
         }
 
+        public DataTemplate AssetBrowserPaneTemplate
+        {
+            get;
+            set;
+        }
 
 
-        //public class AssetBrowserPaneViewModel : DockingWindowViewModel
-        //{
-        //    public const string ID = "4319353E-A6E3-4678-8394-B41BBAB30289";
 
-        //    public AssetBrowserPaneViewModel() : base(DockingType.Anchorable, DockingControlType.AssetBrowser)
-        //    {
-        //        Title = "AssetBrowser";
-        //        Name = "Asset Browser";
-        //        ContentId = ID;
-        //        ToolTip = Resources.AddFile;
-        //        IconSource = new Uri(Resources.icons8_book, UriKind.RelativeOrAbsolute);
-        //    }
-        //}
+        public class AssetBrowserPaneViewModel : DockingWindowViewModel
+        {
+            public const string ID = "4319353E-A6E3-4678-8394-B41BBAB30289";
+
+            public AssetBrowserPaneViewModel() : base(DockingType.Document, DockingControlType.AssetBrowser)
+            {
+                Title = Resources.AssetBrowser;
+                Name = Resources.AssetBrowser;
+                ContentId = ID;
+                ToolTip = Resources.AssetBrowserToolTip;
+                IconSource = new Uri(Resources.Icon_Library, UriKind.RelativeOrAbsolute);
+            }
+        }
 
         public class StartPagePaneViewModel : DockingWindowViewModel
         {
             public const string ID = "1D38BF69-2983-4B43-ABB2-993F7A9B9627";
 
-            public StartPagePaneViewModel() : base(DockingType.Document, DockingControlType.LogViewer)
+            public StartPagePaneViewModel() : base(DockingType.Document, DockingControlType.StartPage)
             {
                 Title = "Start Page";
                 Name = "Start Page";
@@ -87,9 +93,15 @@ namespace RizaWpfEditor.Panes
             {
                 return StartPagePaneTemplate;
             }
+
             if (item is LogViewerPaneViewModel)
             {
                 return LogViewerPaneTemplate;
+            }
+
+            if (item is AssetBrowserPaneViewModel)
+            {
+                return AssetBrowserPaneTemplate;
             }
 
             return base.SelectTemplate(item, container);

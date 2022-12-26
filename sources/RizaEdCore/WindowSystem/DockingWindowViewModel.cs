@@ -21,6 +21,7 @@ namespace RizaEdCore.WindowSystem
         public enum DockingControlType
         {
             None,
+            StartPage,
             AssetBrowser,
             LogViewer
         }

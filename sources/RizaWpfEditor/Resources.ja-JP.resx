@@ -144,6 +144,9 @@
   <data name="File_NoKey" xml:space="preserve">
     <value>ファイル</value>
   </data>
+  <data name="Folder" xml:space="preserve">
+    <value>フォルダ</value>
+  </data>
   <data name="Game" xml:space="preserve">
     <value>ゲーム(_G)</value>
   </data>
@@ -204,20 +207,41 @@
   <data name="Icon-Undo" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_arrow_undo_128_filled.png</value>
   </data>
+  <data name="Icon_Add_Folder" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_folder_add_128_filled.png</value>
+  </data>
   <data name="Icon_Error" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_error_circle_128_filled.png</value>
   </data>
   <data name="Icon_Eye_Tracking" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_eye_tracking_on_128_filled.png</value>
   </data>
+  <data name="Icon_Folder" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_folder_128_filled.png</value>
+  </data>
+  <data name="Icon_Image" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_image_128_filled.png</value>
+  </data>
+  <data name="Icon_Import" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_arrow_import_128_filled.png</value>
+  </data>
   <data name="Icon_Info" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_info_128_filled.png</value>
+  </data>
+  <data name="Icon_Rename" xml:space="preserve">
+    <value>/RizaWpfEditor;component/Icons/ic_fluent_rename_128_filled.png</value>
   </data>
   <data name="Icon_View_Desktop" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_view_desktop_128_filled.png</value>
   </data>
   <data name="Icon_Warning" xml:space="preserve">
     <value>/RizaWpfEditor;component/Icons/ic_fluent_warning_128_filled.png</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>インポート</value>
+  </data>
+  <data name="ImportDescription" xml:space="preserve">
+    <value>インポートするアセットを選択してください。</value>
   </data>
   <data name="Launch" xml:space="preserve">
     <value>起動</value>
@@ -248,6 +272,9 @@
   </data>
   <data name="ProjectName" xml:space="preserve">
     <value>プロジェクト名</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>名前変更</value>
   </data>
   <data name="SelectLocation" xml:space="preserve">
     <value>保存先を選択</value>

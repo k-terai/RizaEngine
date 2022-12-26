@@ -142,6 +142,15 @@ namespace RizaWpfEditor {
         }
         
         /// <summary>
+        ///   Folder に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Folder {
+            get {
+                return ResourceManager.GetString("Folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Game(_G) に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Game {
@@ -174,6 +183,15 @@ namespace RizaWpfEditor {
         public static string Help_NoKey {
             get {
                 return ResourceManager.GetString("Help_NoKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_folder_add_128_filled.png に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Icon_Add_Folder {
+            get {
+                return ResourceManager.GetString("Icon_Add_Folder", resourceCulture);
             }
         }
         
@@ -241,6 +259,15 @@ namespace RizaWpfEditor {
         }
         
         /// <summary>
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_folder_128_filled.png に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Icon_Folder {
+            get {
+                return ResourceManager.GetString("Icon_Folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   /RizaWpfEditor;component/Icons/ic_fluent_folder_open_128_filled.png に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Icon_FolderOpen {
@@ -264,6 +291,24 @@ namespace RizaWpfEditor {
         public static string Icon_FullScreen_Minimize {
             get {
                 return ResourceManager.GetString("Icon-FullScreen-Minimize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_image_128_filled.png に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Icon_Image {
+            get {
+                return ResourceManager.GetString("Icon_Image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_arrow_import_128_filled.png に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Icon_Import {
+            get {
+                return ResourceManager.GetString("Icon_Import", resourceCulture);
             }
         }
         
@@ -322,6 +367,15 @@ namespace RizaWpfEditor {
         }
         
         /// <summary>
+        ///   /RizaWpfEditor;component/Icons/ic_fluent_rename_128_filled.png に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Icon_Rename {
+            get {
+                return ResourceManager.GetString("Icon_Rename", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   /RizaWpfEditor;component/Icons/ic_fluent_save_128_filled.png に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Icon_Save {
@@ -363,6 +417,24 @@ namespace RizaWpfEditor {
         public static string Icon_Warning {
             get {
                 return ResourceManager.GetString("Icon_Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Import に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Import {
+            get {
+                return ResourceManager.GetString("Import", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Please select the assets to import. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ImportDescription {
+            get {
+                return ResourceManager.GetString("ImportDescription", resourceCulture);
             }
         }
         
@@ -453,6 +525,15 @@ namespace RizaWpfEditor {
         public static string ProjectName {
             get {
                 return ResourceManager.GetString("ProjectName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Rename に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Rename {
+            get {
+                return ResourceManager.GetString("Rename", resourceCulture);
             }
         }
         
