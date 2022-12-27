@@ -28,11 +28,10 @@ namespace RizaEngine
 		auto hval = c_Fnv_Basis_32;
 		auto current = bytes;
 
-		while (*current != 0)
+		for (int32 i = 0; i < length; i++)
 		{
 			hval = hval + (hval << 1) + (hval << 4) + (hval << 7) + (hval << 8) + (hval << 24);
-			hval = hval ^ (uint32)(*current);
-			++current;
+			hval = hval ^ (uint32)(current[i]);
 		}
 
 		return hval;
@@ -58,11 +57,10 @@ namespace RizaEngine
 		auto hval = c_Fnv_Basis_64;
 		auto current = bytes;
 
-		while (*current != 0)
+		for (int32 i = 0; i < length; i++)
 		{
 			hval = hval + (hval << 1) + (hval << 4) + (hval << 5) + (hval << 7) + (hval << 8) + (hval << 40);
-			hval = hval ^ (uint64)(*current);
-			++current;
+			hval = hval ^ (uint64)(current[i]);
 		}
 
 		return hval;

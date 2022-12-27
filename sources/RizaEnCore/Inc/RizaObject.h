@@ -21,6 +21,7 @@ namespace RizaEngine
 #endif
 
 	private:
+		uint32 m_uniqueId;
 
 #if _DEBUG
 		tstring m_debugName;

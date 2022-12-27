@@ -8,6 +8,8 @@
 
 namespace RizaEngine
 {
+	const uint32 c_InvalidUniqueId = 0;
+
 	enum class LogType
 	{
 		Info,
