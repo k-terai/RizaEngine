@@ -1303,7 +1303,6 @@
             <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}"
                       Color="Black" />-->
 
-            <!--CustomMainUpUpUpUpBrush-->
             <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}"
                       Color="#FF3A3A3A" />
             <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}"
@@ -1772,6 +1771,20 @@
         </Style.Triggers>
     </Style>
     <Style x:Key="CustomDataGridCellStyle" TargetType="{x:Type DataGridCell}">
+
+        <!--Overwrite the color when the focus is removed in the selected state-->
+        <Style.Resources>
+            <!--<SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+                      Color="#FF3A3A3A" />
+            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}"
+                      Color="Black" />-->
+
+            <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}"
+                      Color="#FF3A3A3A" />
+            <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}"
+                      Color="Black" />
+        </Style.Resources>
+
         <Setter Property="Background" Value="{DynamicResource DarkSurfaceColor01dpBrush}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource DarkSurfaceColor00dpBrush}"/>
         <Setter Property="BorderThickness" Value="1.5"/>
