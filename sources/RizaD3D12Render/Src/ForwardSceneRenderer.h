@@ -24,6 +24,8 @@ namespace RizaEngine
 		CHRESULT CreateCommandList();
 		CHRESULT CreateFence();
 
+		void WaitForPreviousFrame();
+
 	private:
 		CID3D12Device* m_device;
 		CIDXGIFactory* m_factory;

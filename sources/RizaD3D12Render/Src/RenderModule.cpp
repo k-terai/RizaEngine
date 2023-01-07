@@ -24,7 +24,7 @@ void RenderModule::Startup()
 
 void RenderModule::Update()
 {
-
+	m_sceneRendererMgr.Update();
 }
 
 void RizaEngine::RenderModule::Terminate()

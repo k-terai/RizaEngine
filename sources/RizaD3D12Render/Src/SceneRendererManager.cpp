@@ -66,6 +66,14 @@ bool RizaEngine::SceneRendererManager::CreateForwardSceneRenderer(const whandle 
 	return result == S_OK;
 }
 
+void RizaEngine::SceneRendererManager::Update()
+{
+	for (auto& r : m_sceneRenderers) 
+	{
+		r.get()->Render();
+	}
+}
+
 CHRESULT RizaEngine::SceneRendererManager::EnableDebugLayer()
 {
 #if defined(_DEBUG)

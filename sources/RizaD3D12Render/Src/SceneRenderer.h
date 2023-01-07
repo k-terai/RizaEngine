@@ -16,6 +16,7 @@ namespace RizaEngine
 
 	protected:
 		uint32 m_frameCount;
+		uint32 m_frameIndex;
 		uint32 m_windowWidth;
 		uint32 m_windowHeight;
 	};

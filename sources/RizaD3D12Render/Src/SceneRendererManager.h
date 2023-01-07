@@ -21,6 +21,8 @@ namespace RizaEngine
 		bool Initialize();
 		bool CreateForwardSceneRenderer(const whandle hwnd);
 
+		void Update();
+
 	private:
 		CHRESULT EnableDebugLayer();
 		CHRESULT CreateFactory();

@@ -7,7 +7,7 @@
 using namespace RizaEngine;
 using namespace std;
 
-SceneRenderer::SceneRenderer() : m_frameCount(2), m_windowWidth(0), m_windowHeight(0)
+SceneRenderer::SceneRenderer() : m_frameCount(2), m_windowWidth(0), m_windowHeight(0), m_frameIndex(0)
 {
 
 }
@@ -15,5 +15,8 @@ SceneRenderer::SceneRenderer() : m_frameCount(2), m_windowWidth(0), m_windowHeig
 
 SceneRenderer::~SceneRenderer()
 {
-
+	m_frameCount = 2;
+	m_windowWidth = 0;
+	m_windowHeight = 0;
+	m_frameIndex = 0;
 }

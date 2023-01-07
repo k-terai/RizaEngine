@@ -13,7 +13,7 @@ namespace RizaEngine
 		CommandContext(const D3D12_COMMAND_LIST_TYPE type);
 		virtual ~CommandContext();
 
-		inline void SetCommandAllocaator(CID3D12CommandAllocator* const allocator)
+		inline void SetCommandAllocator(CID3D12CommandAllocator* const allocator)
 		{
 			m_currentAllocator = allocator;
 		}

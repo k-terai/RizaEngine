@@ -16,7 +16,7 @@ namespace RizaEngine
 	typedef ID3D12Debug CID3D12Debug;
 	typedef IDXGIFactory4 CIDXGIFactory;
 	typedef ID3D12Device CID3D12Device;
-	typedef IDXGISwapChain1 CIDXGISwapChain;
+	typedef IDXGISwapChain3 CIDXGISwapChain;
 	typedef ID3D12CommandQueue CID3D12CommandQueue;
 	typedef ID3D12DescriptorHeap CID3D12DescriptorHeap;
 	typedef ID3D12Resource CID3D12Resource;

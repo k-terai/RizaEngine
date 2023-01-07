@@ -6,9 +6,11 @@
 #include "ForwardSceneRenderer.h"
 #include"WindowsUtility.h"
 #include"Logger.h"
+#include"SimpleMath.h"
 
 using namespace RizaEngine;
 using namespace std;
+using namespace DirectX::SimpleMath;
 
 ForwardSceneRenderer::ForwardSceneRenderer()
 {
@@ -46,7 +48,22 @@ ForwardSceneRenderer::~ForwardSceneRenderer()
 
 void ForwardSceneRenderer::Render()
 {
+	//NOTE: This code is entirely test.
+	{
+		m_graphicsContext->Begin();
+		m_graphicsContext->ResourceBarrier(m_renderTargets[m_frameIndex].Get(), D3D12_RESOURCE_STATE_PRESENT, D3D12_RESOURCE_STATE_RENDER_TARGET);
+		CD3DX12_CPU_DESCRIPTOR_HANDLE rtvHandle(m_rtvHeap->GetCPUDescriptorHandleForHeapStart(), m_frameIndex, m_rtvDescriptorSize);
+		const float clearColor[] = { 0.0f, 0.2f, 0.4f, 1.0f };
+		m_graphicsContext->ClearRenderTargetView(rtvHandle, Color::Color(1, 0, 1, 0), 0, nullptr);
+		m_graphicsContext->ResourceBarrier(m_renderTargets[m_frameIndex].Get(), D3D12_RESOURCE_STATE_RENDER_TARGET, D3D12_RESOURCE_STATE_PRESENT);
+		m_graphicsContext->End();
 
+		ID3D12CommandList* ppCommandLists[] = { m_commandList.Get() };
+		m_commandQueue->ExecuteCommandLists(_countof(ppCommandLists), ppCommandLists);
+
+		m_swapChain->Present(1, 0);
+		WaitForPreviousFrame();
+	}
 }
 
 CHRESULT RizaEngine::ForwardSceneRenderer::Initialize(CID3D12Device* const device, CIDXGIFactory* const factory, const whandle hwnd)
@@ -118,20 +135,29 @@ CHRESULT RizaEngine::ForwardSceneRenderer::InitSwapChain(const whandle hwnd)
 	swapChainDesc.SwapEffect = DXGI_SWAP_EFFECT_FLIP_DISCARD;
 	swapChainDesc.SampleDesc.Count = 1;
 
+	ComPtr<IDXGISwapChain1> swapChain;
+
 	CHRESULT result = m_factory->CreateSwapChainForHwnd(
 		m_commandQueue.Get(),
 		hwnd,
 		&swapChainDesc,
 		nullptr,
 		nullptr,
-		&m_swapChain
+		&swapChain
 	);
+	if (Logger::IsFailureLog(result))
+	{
+		return result;
+	}
 
-	Logger::IsFailureLog(result);
+	result = swapChain.As(&m_swapChain);
+	if (Logger::IsFailureLog(result))
+	{
+		return result;
+	}
 
 	result = m_factory->MakeWindowAssociation(hwnd, DXGI_MWA_NO_ALT_ENTER);
 	Logger::IsFailureLog(result);
-
 	return result;
 }
 
@@ -147,7 +173,7 @@ CHRESULT RizaEngine::ForwardSceneRenderer::CreateRenderTarget()
 		rtvHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_RTV;
 		rtvHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_NONE;
 		result = m_device->CreateDescriptorHeap(&rtvHeapDesc, IID_PPV_ARGS(&m_rtvHeap));
-		if (Logger::IsFailureLog(result) == false)
+		if (Logger::IsFailureLog(result))
 		{
 			return result;
 		}
@@ -164,7 +190,7 @@ CHRESULT RizaEngine::ForwardSceneRenderer::CreateRenderTarget()
 		for (uint32 n = 0; n < m_frameCount; n++)
 		{
 			result = m_swapChain->GetBuffer(n, IID_PPV_ARGS(&m_renderTargets[n]));
-			if (Logger::IsFailureLog(result) == false)
+			if (Logger::IsFailureLog(result))
 			{
 				return result;
 			}
@@ -184,7 +210,7 @@ CHRESULT RizaEngine::ForwardSceneRenderer::CreateCommandAllocator()
 
 	if (Logger::IsFailureLog(result) == false)
 	{
-		m_graphicsContext->SetCommandAllocaator(m_commandAllocator.Get());
+		m_graphicsContext->SetCommandAllocator(m_commandAllocator.Get());
 	}
 	return result;
 }
@@ -196,6 +222,9 @@ CHRESULT RizaEngine::ForwardSceneRenderer::CreateCommandList()
 	if (Logger::IsFailureLog(result) == false)
 	{
 		m_graphicsContext->SetGraphicsCommandList(m_commandList.Get());
+
+		//NOTE: Call close func because default state is record.
+		m_commandList->Close();
 	}
 	return result;
 }
@@ -216,4 +245,29 @@ CHRESULT ForwardSceneRenderer::CreateFence()
 	}
 
 	return result;
+}
+
+void RizaEngine::ForwardSceneRenderer::WaitForPreviousFrame()
+{
+	const uint64 fence = m_fenceValue;
+	CHRESULT result = m_commandQueue->Signal(m_fence.Get(), fence);
+	if (Logger::IsFailureLog(result))
+	{
+		return;
+	}
+
+	m_fenceValue++;
+
+	if (m_fence->GetCompletedValue() < fence)
+	{
+		result = m_fence->SetEventOnCompletion(fence, m_fenceEvent);
+		if (Logger::IsFailureLog(result))
+		{
+			return;
+		}
+
+		WaitForSingleObject(m_fenceEvent, INFINITE);
+	}
+
+	m_frameIndex = m_swapChain->GetCurrentBackBufferIndex();
 }
