@@ -157,6 +157,7 @@
   <ItemGroup>
     <ClInclude Include="Inc\RizaD3D12Render.h" />
     <ClInclude Include="Src\CommandContext.h" />
+    <ClInclude Include="Src\CommandManager.h" />
     <ClInclude Include="Src\d3d12common.h" />
     <ClInclude Include="Src\d3dx12.h" />
     <ClInclude Include="Src\ForwardSceneRenderer.h" />
@@ -169,6 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\CommandContext.cpp" />
+    <ClCompile Include="Src\CommandManager.cpp" />
     <ClCompile Include="Src\ForwardSceneRenderer.cpp" />
     <ClCompile Include="Src\GraphicsContext.cpp" />
     <ClCompile Include="Src\pch.cpp">
