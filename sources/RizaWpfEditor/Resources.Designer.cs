@@ -79,6 +79,24 @@ namespace RizaWpfEditor {
         }
         
         /// <summary>
+        ///   Cancel に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Create に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Create {
+            get {
+                return ResourceManager.GetString("Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Edit(_E) に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Edit {
@@ -156,6 +174,33 @@ namespace RizaWpfEditor {
         public static string Icon_Save {
             get {
                 return ResourceManager.GetString("Icon_Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Project Location に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ProjectLocation {
+            get {
+                return ResourceManager.GetString("ProjectLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Project Name に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ProjectName {
+            get {
+                return ResourceManager.GetString("ProjectName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recent Projects に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string RecentProject {
+            get {
+                return ResourceManager.GetString("RecentProject", resourceCulture);
             }
         }
         

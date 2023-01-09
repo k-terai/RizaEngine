@@ -1,0 +1,39 @@
+﻿<Window x:Class="RizaWpfEditor.Projects.ProjectWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RizaWpfEditor.Projects"
+        xmlns:service="clr-namespace:RizaWpfEditor.Service" 
+        mc:Ignorable="d"
+        Title="{Binding Title, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+        Height="{Binding Height, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+        Width="{Binding Width, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+        Background="{DynamicResource WindowBackground}" 
+        WindowState="{Binding State,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" 
+        MinWidth="{Binding MinWidth, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+        MinHeight="{Binding MinHeight, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+        ResizeMode="{Binding ResizeModeType,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" 
+        WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <local:ProjectWindowViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Label Content="{Binding Resources.ProjectLocation, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}"  Foreground="{DynamicResource MediumEmphasisTextColorBrush}" Height="25" Margin="10,394,0,0" VerticalAlignment="Top"/>
+        <TextBox Margin="10,432,140,0" IsReadOnly="True" TextWrapping="Wrap" Text="{Binding ProjectViewModel.Location, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Height="22" d:LayoutOverrides="HorizontalAlignment, Height" VerticalAlignment="Top" Background="{DynamicResource TextBoxBackground}" Foreground="{DynamicResource MediumEmphasisTextColorBrush}" BorderBrush="{DynamicResource TextBoxBackground}"/>
+        <Button Content="{Binding Resources.ProjectLocation, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Margin="525,432,10,0" Background="{DynamicResource Button.MouseOver.Background}" Foreground="{DynamicResource MediumEmphasisTextColorBrush}" BorderBrush="{DynamicResource Button.Static.Background}" Height="22" VerticalAlignment="Top" 
+                Command="{Binding SelectLocationCommand,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Content="{Binding Resources.ProjectName, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}"  Foreground="{DynamicResource MediumEmphasisTextColorBrush}" Height="25" Margin="10,479,0,0" VerticalAlignment="Top"/>
+        <TextBox Margin="10,509,315,0" TextWrapping="Wrap" Text="{Binding ProjectViewModel.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="21" VerticalAlignment="Top" Background="{DynamicResource TextBoxBackground}" Foreground="{DynamicResource HighEmphasisTextColorBrush}" BorderBrush="{DynamicResource TextBoxBackground}" d:LayoutOverrides="HorizontalAlignment"/>
+        <Label Content="{Binding ProjectViewModel.ProjectNameError,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" Margin="10,535,10,0" Foreground="{DynamicResource ErrorColorForeground}" Height="25" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment"/>
+        <Button Content="{Binding Resources.Create, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Margin="525,577,10,0" Background="{DynamicResource ButtonDecisionBackground}" Foreground="{DynamicResource MediumEmphasisTextColorBrush}" BorderBrush="{DynamicResource Button.Static.Background}" Height="22" VerticalAlignment="Top"
+                Command="{Binding ProjectViewModel.CreateProjectCommand,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Content="{Binding Resources.Cancel, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Margin="396,577,140,0" Background="{DynamicResource Button.MouseOver.Background}" Foreground="{DynamicResource MediumEmphasisTextColorBrush}" BorderBrush="{DynamicResource Button.Static.Border}" Height="22" VerticalAlignment="Top"
+                Command="{Binding CancelCommand,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"/>
+        <GroupBox Header="{Binding Resources.RecentProject, Mode=OneWay, Source={x:Static service:ResourceService.Current}, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource CustomGroupBoxStyle}" Margin="5,10,5,0" Foreground="{DynamicResource MediumEmphasisTextColorBrush}" Height="364" VerticalAlignment="Top" BorderBrush="{DynamicResource Menu.Static.Border}" Background="Black">
+            <Grid Height="341" Width="628"/>
+        </GroupBox>
+    </Grid>
+</Window>

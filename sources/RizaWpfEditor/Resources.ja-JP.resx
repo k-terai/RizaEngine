@@ -123,6 +123,12 @@
   <data name="Build" xml:space="preserve">
     <value>ビルド(_B)</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>作成</value>
+  </data>
   <data name="Edit" xml:space="preserve">
     <value>編集(_E)</value>
   </data>
@@ -149,6 +155,15 @@
   </data>
   <data name="Icon_Save" xml:space="preserve">
     <value>ic_fluent_save_128_filled.png</value>
+  </data>
+  <data name="ProjectLocation" xml:space="preserve">
+    <value>プロジェクト場所</value>
+  </data>
+  <data name="ProjectName" xml:space="preserve">
+    <value>プロジェクト名</value>
+  </data>
+  <data name="RecentProject" xml:space="preserve">
+    <value>最近のプロジェクト</value>
   </data>
   <data name="Save" xml:space="preserve">
     <value>保存</value>

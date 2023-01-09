@@ -103,6 +103,10 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Commands\" />
+  </ItemGroup>
+
   <Import Project="..\RizaEdCore\RizaEdCore.projitems" Label="Shared" />
 
 </Project>
