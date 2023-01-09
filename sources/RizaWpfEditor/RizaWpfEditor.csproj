@@ -27,6 +27,82 @@
     <DefineConstants>$(DefineConstants)TRACE;WPF</DefineConstants>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Icons\Fluent\ic_fluent_album_add_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_arrow_import_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_arrow_minimize_vertical_24_regular-custom.png" />
+    <None Remove="Icons\Fluent\ic_fluent_arrow_minimize_vertical_24_regular.png" />
+    <None Remove="Icons\Fluent\ic_fluent_arrow_redo_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_arrow_undo_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_broom_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_dismiss_24_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_error_circle_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_eye_tracking_on_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_folder_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_folder_add_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_folder_open_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_full_screen_maximize_24_regular.png" />
+    <None Remove="Icons\Fluent\ic_fluent_full_screen_minimize_24_regular.png" />
+    <None Remove="Icons\Fluent\ic_fluent_image_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_info_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_library_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_open_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_pause_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_play_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_rename_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_save_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_stop_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_view_desktop_128_filled.png" />
+    <None Remove="Icons\Fluent\ic_fluent_warning_128_filled.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\Fluent\ic_fluent_album_add_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_arrow_import_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_arrow_minimize_vertical_24_regular-custom.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_arrow_minimize_vertical_24_regular.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_arrow_redo_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_arrow_undo_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_broom_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_dismiss_24_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_error_circle_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_eye_tracking_on_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_folder_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_folder_add_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_folder_open_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_full_screen_maximize_24_regular.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_full_screen_minimize_24_regular.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_image_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_info_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_library_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_open_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_pause_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_play_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_rename_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_save_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_stop_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_view_desktop_128_filled.png" />
+    <Resource Include="Icons\Fluent\ic_fluent_warning_128_filled.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources.ja-JP.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
   <Import Project="..\RizaEdCore\RizaEdCore.projitems" Label="Shared" />
 
 </Project>
