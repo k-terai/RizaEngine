@@ -9,8 +9,6 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "RizaEdCore", "RizaEdCore\Ri
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RizaConsole", "RizaConsole\RizaConsole.csproj", "{C26C9287-B9F0-4292-89C1-C7F0FCFFDBCF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RizaWpfEditor", "RizaWpfEditor\RizaWpfEditor.csproj", "{38D44B26-51F1-4023-ACD3-C67B8F4C3638}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Engine", "Engine", "{0316AC79-F72D-4B8D-A6F2-46F04E84F54A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RizaEnCore", "RizaEnCore\RizaEnCore.vcxproj", "{BFDB685C-F7FB-4F30-9205-D3136FAD5140}"
@@ -35,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvalonDock", "ThirdParty\Av
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvalonDock.Themes.Metro", "ThirdParty\AvalonDock-master\source\AvalonDock.Themes.Metro\AvalonDock.Themes.Metro.csproj", "{AE36B213-77C4-405E-A0E5-F79FC2A8F189}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RizaWpfEditor", "RizaWpfEditor\RizaWpfEditor.csproj", "{38F6D3AD-1A1D-49A5-9537-EB7B95C6BF45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -45,10 +45,6 @@ Global
 		{C26C9287-B9F0-4292-89C1-C7F0FCFFDBCF}.Debug|x64.Build.0 = Debug|x64
 		{C26C9287-B9F0-4292-89C1-C7F0FCFFDBCF}.Release|x64.ActiveCfg = Release|x64
 		{C26C9287-B9F0-4292-89C1-C7F0FCFFDBCF}.Release|x64.Build.0 = Release|x64
-		{38D44B26-51F1-4023-ACD3-C67B8F4C3638}.Debug|x64.ActiveCfg = Debug|x64
-		{38D44B26-51F1-4023-ACD3-C67B8F4C3638}.Debug|x64.Build.0 = Debug|x64
-		{38D44B26-51F1-4023-ACD3-C67B8F4C3638}.Release|x64.ActiveCfg = Release|x64
-		{38D44B26-51F1-4023-ACD3-C67B8F4C3638}.Release|x64.Build.0 = Release|x64
 		{BFDB685C-F7FB-4F30-9205-D3136FAD5140}.Debug|x64.ActiveCfg = Debug|x64
 		{BFDB685C-F7FB-4F30-9205-D3136FAD5140}.Debug|x64.Build.0 = Debug|x64
 		{BFDB685C-F7FB-4F30-9205-D3136FAD5140}.Release|x64.ActiveCfg = Release|x64
@@ -81,6 +77,10 @@ Global
 		{AE36B213-77C4-405E-A0E5-F79FC2A8F189}.Debug|x64.Build.0 = Debug|x64
 		{AE36B213-77C4-405E-A0E5-F79FC2A8F189}.Release|x64.ActiveCfg = Release|x64
 		{AE36B213-77C4-405E-A0E5-F79FC2A8F189}.Release|x64.Build.0 = Release|x64
+		{38F6D3AD-1A1D-49A5-9537-EB7B95C6BF45}.Debug|x64.ActiveCfg = Debug|x64
+		{38F6D3AD-1A1D-49A5-9537-EB7B95C6BF45}.Debug|x64.Build.0 = Debug|x64
+		{38F6D3AD-1A1D-49A5-9537-EB7B95C6BF45}.Release|x64.ActiveCfg = Release|x64
+		{38F6D3AD-1A1D-49A5-9537-EB7B95C6BF45}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,7 +88,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{6B77DCA0-392F-472F-B58E-9949A31F2DAD} = {C009257D-BF24-42E4-A16F-D543C26E06FD}
 		{C26C9287-B9F0-4292-89C1-C7F0FCFFDBCF} = {C009257D-BF24-42E4-A16F-D543C26E06FD}
-		{38D44B26-51F1-4023-ACD3-C67B8F4C3638} = {C009257D-BF24-42E4-A16F-D543C26E06FD}
 		{BFDB685C-F7FB-4F30-9205-D3136FAD5140} = {0316AC79-F72D-4B8D-A6F2-46F04E84F54A}
 		{2B5A69B1-F159-4B25-923B-9840D433781B} = {0316AC79-F72D-4B8D-A6F2-46F04E84F54A}
 		{3537B4B1-6D90-4C9C-A5EC-B11F0FB61484} = {0316AC79-F72D-4B8D-A6F2-46F04E84F54A}
@@ -98,12 +97,13 @@ Global
 		{6B101697-4C99-4E4A-BA11-C527FD4337AC} = {C009257D-BF24-42E4-A16F-D543C26E06FD}
 		{3BCCC53F-DFB0-4CD3-B557-B6D0BEE302CC} = {6B101697-4C99-4E4A-BA11-C527FD4337AC}
 		{AE36B213-77C4-405E-A0E5-F79FC2A8F189} = {6B101697-4C99-4E4A-BA11-C527FD4337AC}
+		{38F6D3AD-1A1D-49A5-9537-EB7B95C6BF45} = {C009257D-BF24-42E4-A16F-D543C26E06FD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7D4BA923-D2FC-4947-AC3B-5B158E589285}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		RizaEdCore\RizaEdCore.projitems*{38d44b26-51f1-4023-acd3-c67b8f4c3638}*SharedItemsImports = 5
+		RizaEdCore\RizaEdCore.projitems*{38f6d3ad-1a1d-49a5-9537-eb7b95c6bf45}*SharedItemsImports = 5
 		RizaEdCore\RizaEdCore.projitems*{6b77dca0-392f-472f-b58e-9949a31f2dad}*SharedItemsImports = 13
 		RizaEdCore\RizaEdCore.projitems*{b0807298-8803-4ab6-9e6e-461689148cca}*SharedItemsImports = 5
 		RizaEdCore\RizaEdCore.projitems*{c26c9287-b9f0-4292-89c1-c7f0fcffdbcf}*SharedItemsImports = 5

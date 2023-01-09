@@ -1,7 +1,4 @@
-﻿// Copyright (c) k-terai and Contributors
-// Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RizaWpfEditor.StartPage
+namespace RizaWpfEditor
 {
     /// <summary>
-    /// StartPageControl.xaml の相互作用ロジック
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class StartPageControl : UserControl,IStartPageControl
+    public partial class MainWindow : Window
     {
-        public UserControl Control => this;
-
-        public StartPageControl()
+        public MainWindow()
         {
             InitializeComponent();
         }
-
     }
 }
