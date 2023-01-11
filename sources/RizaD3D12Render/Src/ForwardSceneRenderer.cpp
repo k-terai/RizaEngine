@@ -19,12 +19,8 @@ ForwardSceneRenderer::ForwardSceneRenderer()
 
 ForwardSceneRenderer::~ForwardSceneRenderer()
 {
-	m_fence.Reset();
 	m_graphicsContext.reset();
-	m_commandList.Reset();
-	m_commandAllocator.Reset();
 	m_swapChain.Reset();
-	m_commandQueue.Reset();
 	m_rtvHeap.Reset();
 
 	for (auto& r : m_renderTargets)
@@ -33,12 +29,8 @@ ForwardSceneRenderer::~ForwardSceneRenderer()
 	}
 	m_renderTargets.clear();
 
-	m_fence = nullptr;
 	m_graphicsContext = nullptr;
-	m_commandAllocator = nullptr;
-	m_commandList = nullptr;
 	m_swapChain = nullptr;
-	m_commandQueue = nullptr;
 	m_rtvHeap = nullptr;
 	m_device = nullptr;
 	m_factory = nullptr;
@@ -57,12 +49,12 @@ void ForwardSceneRenderer::Render()
 		m_graphicsContext->ClearRenderTargetView(rtvHandle, Color::Color(1, 0, 1, 0), 0, nullptr);
 		m_graphicsContext->ResourceBarrier(m_renderTargets[m_frameIndex].Get(), D3D12_RESOURCE_STATE_RENDER_TARGET, D3D12_RESOURCE_STATE_PRESENT);
 		m_graphicsContext->End();
-
-		ID3D12CommandList* ppCommandLists[] = { m_commandList.Get() };
-		m_commandQueue->ExecuteCommandLists(_countof(ppCommandLists), ppCommandLists);
+		m_graphicsContext->ExecuteCommandList();
 
 		m_swapChain->Present(1, 0);
-		WaitForPreviousFrame();
+		m_commandMgr.WaitForPreviousFrame();
+
+		m_frameIndex = m_swapChain->GetCurrentBackBufferIndex();
 	}
 }
 
@@ -71,11 +63,8 @@ CHRESULT RizaEngine::ForwardSceneRenderer::Initialize(CID3D12Device* const devic
 	m_graphicsContext = std::make_unique<GraphicsContext>(D3D12_COMMAND_LIST_TYPE_DIRECT);
 	m_device = device;
 	m_factory = factory;
-
-	if (FAILED(InitCommandQueue()))
-	{
-		return S_FALSE;
-	}
+	m_commandMgr.Initialize(m_device);
+	m_graphicsContext->Initialize(&m_commandMgr);
 
 	if (FAILED(InitSwapChain(hwnd)))
 	{
@@ -87,37 +76,9 @@ CHRESULT RizaEngine::ForwardSceneRenderer::Initialize(CID3D12Device* const devic
 		return S_FALSE;
 	}
 
-	if (FAILED(CreateCommandAllocator()))
-	{
-		return S_FALSE;
-	}
-
-
-	if (FAILED(CreateCommandList()))
-	{
-		return S_FALSE;
-	}
-
-
-	if (FAILED(CreateFence()))
-	{
-		return S_FALSE;
-	}
-
 	return S_OK;
 }
 
-CHRESULT RizaEngine::ForwardSceneRenderer::InitCommandQueue()
-{
-	D3D12_COMMAND_QUEUE_DESC queueDesc = {};
-	SecureZeroMemory(&queueDesc, sizeof(D3D12_COMMAND_QUEUE_DESC));
-	queueDesc.Flags = D3D12_COMMAND_QUEUE_FLAG_NONE;
-	queueDesc.Type = D3D12_COMMAND_LIST_TYPE_DIRECT;
-	CHRESULT result = m_device->CreateCommandQueue(&queueDesc, IID_PPV_ARGS(&m_commandQueue));
-
-	Logger::IsFailureLog(result);
-	return result;
-}
 
 CHRESULT RizaEngine::ForwardSceneRenderer::InitSwapChain(const whandle hwnd)
 {
@@ -138,7 +99,7 @@ CHRESULT RizaEngine::ForwardSceneRenderer::InitSwapChain(const whandle hwnd)
 	ComPtr<IDXGISwapChain1> swapChain;
 
 	CHRESULT result = m_factory->CreateSwapChainForHwnd(
-		m_commandQueue.Get(),
+		m_commandMgr.GetCommandQueue(),
 		hwnd,
 		&swapChainDesc,
 		nullptr,
@@ -202,72 +163,4 @@ CHRESULT RizaEngine::ForwardSceneRenderer::CreateRenderTarget()
 
 	return result;
 
-}
-
-CHRESULT RizaEngine::ForwardSceneRenderer::CreateCommandAllocator()
-{
-	CHRESULT result = m_device->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, IID_PPV_ARGS(&m_commandAllocator));
-
-	if (Logger::IsFailureLog(result) == false)
-	{
-		m_graphicsContext->SetCommandAllocator(m_commandAllocator.Get());
-	}
-	return result;
-}
-
-CHRESULT RizaEngine::ForwardSceneRenderer::CreateCommandList()
-{
-	CHRESULT result = m_device->CreateCommandList(0, D3D12_COMMAND_LIST_TYPE_DIRECT, m_commandAllocator.Get(), nullptr, IID_PPV_ARGS(&m_commandList));
-
-	if (Logger::IsFailureLog(result) == false)
-	{
-		m_graphicsContext->SetGraphicsCommandList(m_commandList.Get());
-
-		//NOTE: Call close func because default state is record.
-		m_commandList->Close();
-	}
-	return result;
-}
-
-CHRESULT ForwardSceneRenderer::CreateFence()
-{
-	CHRESULT result = m_device->CreateFence(0, D3D12_FENCE_FLAG_NONE, IID_PPV_ARGS(&m_fence));
-	if (Logger::IsFailureLog(result))
-	{
-		return result;
-	}
-
-	m_fenceValue = 1;
-	m_fenceEvent = CreateEvent(nullptr, FALSE, FALSE, nullptr);
-	if (m_fenceEvent == nullptr)
-	{
-		return S_FALSE;
-	}
-
-	return result;
-}
-
-void RizaEngine::ForwardSceneRenderer::WaitForPreviousFrame()
-{
-	const uint64 fence = m_fenceValue;
-	CHRESULT result = m_commandQueue->Signal(m_fence.Get(), fence);
-	if (Logger::IsFailureLog(result))
-	{
-		return;
-	}
-
-	m_fenceValue++;
-
-	if (m_fence->GetCompletedValue() < fence)
-	{
-		result = m_fence->SetEventOnCompletion(fence, m_fenceEvent);
-		if (Logger::IsFailureLog(result))
-		{
-			return;
-		}
-
-		WaitForSingleObject(m_fenceEvent, INFINITE);
-	}
-
-	m_frameIndex = m_swapChain->GetCurrentBackBufferIndex();
 }

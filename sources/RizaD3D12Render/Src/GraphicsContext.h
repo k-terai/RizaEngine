@@ -13,10 +13,7 @@ namespace RizaEngine
 		GraphicsContext(const D3D12_COMMAND_LIST_TYPE type);
 		virtual ~GraphicsContext() override;
 
-		inline void SetGraphicsCommandList(CID3D12GraphicsCommandList* const graphicsCommandList)
-		{
-			m_graphicsCommandList = graphicsCommandList;
-		}
+		virtual bool Initialize(CommandManager* const commandMgr) override;
 
 		inline void Begin()
 		{
@@ -39,6 +36,12 @@ namespace RizaEngine
 			const D3D12_RECT* pRects)
 		{
 			m_graphicsCommandList->ClearRenderTargetView(renderTargetView, color, numRects, pRects);
+		}
+
+		inline void ExecuteCommandList()
+		{
+			ID3D12CommandList* ppCommandLists[] = { m_graphicsCommandList };
+			m_owningManager->GetCommandQueue()->ExecuteCommandLists(_countof(ppCommandLists), ppCommandLists);
 		}
 
 	private:

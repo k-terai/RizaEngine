@@ -10,6 +10,8 @@ using namespace RizaEngine;
 
 HRESULT CommandManager::Initialize(CID3D12Device* const device)
 {
+	m_device = device;
+
 	HRESULT result = CreateCommandQueue();
 
 	if (result != S_OK)
@@ -23,7 +25,7 @@ HRESULT CommandManager::Initialize(CID3D12Device* const device)
 		return result;
 	}
 
-	result = CreateCommandList();
+	result = CreateGraphicsCommandList();
 	if (result != S_OK)
 	{
 		return result;
@@ -36,6 +38,29 @@ HRESULT CommandManager::Initialize(CID3D12Device* const device)
 	}
 
 	return result;
+}
+
+void RizaEngine::CommandManager::WaitForPreviousFrame()
+{
+	const uint64 fence = m_fenceValue;
+	CHRESULT result = m_commandQueue->Signal(m_fence.Get(), fence);
+	if (Logger::IsFailureLog(result))
+	{
+		return;
+	}
+
+	m_fenceValue++;
+
+	if (m_fence->GetCompletedValue() < fence)
+	{
+		result = m_fence->SetEventOnCompletion(fence, m_fenceEvent);
+		if (Logger::IsFailureLog(result))
+		{
+			return;
+		}
+
+		WaitForSingleObject(m_fenceEvent, INFINITE);
+	}
 }
 
 HRESULT RizaEngine::CommandManager::CreateCommandQueue()
@@ -58,14 +83,14 @@ HRESULT RizaEngine::CommandManager::CreateCommandAllocator()
 	return result;
 }
 
-HRESULT RizaEngine::CommandManager::CreateCommandList()
+HRESULT RizaEngine::CommandManager::CreateGraphicsCommandList()
 {
-	HRESULT result = m_device->CreateCommandList(0, D3D12_COMMAND_LIST_TYPE_DIRECT, m_commandAllocator.Get(), nullptr, IID_PPV_ARGS(&m_commandList));
+	HRESULT result = m_device->CreateCommandList(0, D3D12_COMMAND_LIST_TYPE_DIRECT, m_commandAllocator.Get(), nullptr, IID_PPV_ARGS(&m_graphicsCommandList));
 
 	if (Logger::IsFailureLog(result) == false)
 	{
 		//NOTE: Call close func because default state is record.
-		m_commandList->Close();
+		m_graphicsCommandList->Close();
 	}
 	return result;
 }

@@ -16,3 +16,10 @@ GraphicsContext::~GraphicsContext()
 {
 	m_graphicsCommandList = nullptr;
 }
+
+bool RizaEngine::GraphicsContext::Initialize(CommandManager* const commandMgr)
+{
+	CommandContext::Initialize(commandMgr);
+	m_graphicsCommandList = commandMgr->GetGraphicsCommandList();
+	return true;
+}

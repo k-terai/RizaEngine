@@ -16,3 +16,10 @@ CommandContext::~CommandContext()
 {
 	m_currentAllocator = nullptr;
 }
+
+bool RizaEngine::CommandContext::Initialize(CommandManager* const commandMgr)
+{
+	m_owningManager = commandMgr;
+	m_currentAllocator = commandMgr->GetCommandAllocator();
+	return true;
+}

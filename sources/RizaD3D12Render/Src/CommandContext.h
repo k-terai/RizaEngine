@@ -4,6 +4,7 @@
 #pragma once
 #include"d3d12common.h"
 #include"NonCopyable.h"
+#include"CommandManager.h"
 
 namespace RizaEngine
 {
@@ -13,12 +14,11 @@ namespace RizaEngine
 		CommandContext(const D3D12_COMMAND_LIST_TYPE type);
 		virtual ~CommandContext();
 
-		inline void SetCommandAllocator(CID3D12CommandAllocator* const allocator)
-		{
-			m_currentAllocator = allocator;
-		}
+		virtual bool Initialize(CommandManager* const commandMgr);
+
 
 	protected:
+		CommandManager* m_owningManager;
 		CID3D12CommandAllocator* m_currentAllocator;
 	private:
 		const D3D12_COMMAND_LIST_TYPE m_type;
